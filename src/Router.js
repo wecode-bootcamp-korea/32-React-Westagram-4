@@ -16,9 +16,12 @@ import MainJaeWon from './pages/jaewonyang/Main/Main';
 import LoginSungYong from './pages/sungyongseo/Login/Login';
 import MainSungYong from './pages/sungyongseo/Main/Main';
 
+import Nav from './components/Nav/Nav';
+
 function Router() {
   return (
     <BrowserRouter>
+      <Nav />
       <Routes>
         <Route path="/login-hyeongjun" element={<LoginHyeongJun />} />
         <Route path="/main-hyeongjun" element={<MainHyeongJun />} />
