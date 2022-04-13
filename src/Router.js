@@ -1,20 +1,20 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import LoginHyeongJun from './pages/hyeongjunjeon/Login/Login';
-import MainHyeongJun from './pages/hyeongjunjeon/Main/Main';
+import LoginHyeongJun from './pages/hyeongjunjeon/Login/LoginHyeongJun';
+import MainHyeongJun from './pages/hyeongjunjeon/Main/MainHyeongJun';
 
-import LoginByoungGyu from './pages/byounggyukim/Login/Login';
-import MainByoungGyu from './pages/byounggyukim/Main/Main';
+import LoginByoungGyu from './pages/byounggyukim/Login/LoginByoungGyu';
+import MainByoungGyu from './pages/byounggyukim/Main/MainByoungGyu';
 
-import LoginJongHyeok from './pages/jonghyeoklim/Login/Login';
-import MainJongHyeok from './pages/jonghyeoklim/Main/Main';
+import LoginJongHyeok from './pages/jonghyeoklim/Login/LoginJongHyeok';
+import MainJongHyeok from './pages/jonghyeoklim/Main/MainJongHyeok';
 
-import LoginJaeWon from './pages/jaewonyang/Login/Login';
-import MainJaeWon from './pages/jaewonyang/Main/Main';
+import LoginJaeWon from './pages/jaewonyang/Login/LoginJaeWon';
+import MainJaeWon from './pages/jaewonyang/Main/MainJaeWon';
 
-import LoginSungYong from './pages/sungyongseo/Login/Login';
-import MainSungYong from './pages/sungyongseo/Main/Main';
+import LoginSungYong from './pages/sungyongseo/Login/LoginSungYong';
+import MainSungYong from './pages/sungyongseo/Main/MainSungYong';
 
 import Nav from './components/Nav/Nav';
 
