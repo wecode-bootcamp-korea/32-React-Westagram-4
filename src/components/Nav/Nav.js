@@ -1,8 +1,6 @@
 import React from 'react';
 import './Nav.scss';
 
-const b = '../../assets/images/search_icon.png';
-
 const Nav = () => {
   return (
     <div className="main-container">
