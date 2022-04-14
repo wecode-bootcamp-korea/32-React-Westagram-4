@@ -10,6 +10,16 @@ function Login() {
     navigate('/main-jonghyeok');
   };
 
+  const [Id, setId] = useState('');
+  const idChange = event => {
+    setId(event.target.value);
+  };
+
+  const [PassWord, setPassWord] = useState('');
+  const pwChange = event => {
+    setPassWord(event.target.value);
+  };
+
   return (
     <div className="container">
       <header className="logo_name">
@@ -19,10 +29,16 @@ function Login() {
         <div className="login">
           <input
             className="input-login"
+            onChange={idChange}
             type="id"
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
-          <input className="input-pw" type="password" placeholder="비밀번호" />
+          <input
+            className="input-pw"
+            onChange={pwChange}
+            type="password"
+            placeholder="비밀번호"
+          />
           <button onClick={goToMain} className="button">
             로그인
           </button>

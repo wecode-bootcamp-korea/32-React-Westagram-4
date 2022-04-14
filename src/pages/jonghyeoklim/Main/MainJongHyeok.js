@@ -40,6 +40,16 @@ function MainJongHyeok() {
       text: '아라라',
       createdAt: '1분 전',
     },
+    {
+      userId: 'sw234o',
+      text: '아dsklfnl',
+      createdAt: '12분 전',
+    },
+    {
+      userId: '090o',
+      text: '아kadsjhjk라',
+      createdAt: '6분 전',
+    },
   ];
 
   const [liveData, setLiveData] = useState(dummyData);
