@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+}
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  // justify-content: space-around;
+  // align-items: center;
+  border: 1px solid white;
+
+  article {
+    width: 90%;
+    border: 1px solid rgb(163, 160, 160);
+    margin: 20px auto;
+  }
+
+  .feeds {
+    width: 60%;
+    border: 1px solid white;
+    margin: 5px auto 0px auto;
+  }
+
+  .masterProfile {
+    width: 20px;
+    height: 20px;
+    border-radius: 70%;
+  }
+
+  .master {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 15px;
+  }
+
+  .masterName {
+    margin-right: 1200px;
+  }
+
+  .bakingImg {
+    width: 100%;
+    height: 60%;
+  }
+
+  figure {
+    margin: auto 15px auto 15px;
+  }
+
+  .iconBox {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .iconBox1st,
+  .iconBox2nd {
+    font-size: 30px;
+  }
+
+  .likePerson {
+    width: 20px;
+    height: 20px;
+    border-radius: 70%;
+  }
+
+  .likeText {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .more,
+  .beforeFourtyTwo {
+    color: rgb(163, 160, 160);
+    text-align: left;
+  }
+
+  .mj {
+    margin-top: 10px;
+  }
+
+  .comment {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .commentBox {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgb(163, 160, 160);
+    margin-top: 5px;
+  }
+
+  .inputComment {
+    border: none;
+    margin-left: 15px;
+    margin-top: 5px;
+    font-size: 20px;
+  }
+
+  .commentBtn {
+    width: 80px;
+    margin-top: 5px;
+    border: none;
+    color: lightblue;
+    background-color: white;
+    font-size: 20px;
+  }
+
+  .iconBox1st i:first-child {
+    color: red;
+  }
+
+  .mainRight {
+    width: 35%;
+    height: 95%;
+    margin: 5px 15px 5px 15px;
+    border: 1px solid white;
+  }
+
+  .rightProfile {
+    width: 50px;
+    height: 50px;
+    border-radius: 70%;
+  }
+
+  .rightInfo {
+    display: flex;
+    margin: 15px 25px;
+    border: 1px solid white;
+  }
+
+  u {
+    color: rgb(163, 160, 160);
+    text-decoration: none;
+  }
+
+  .myName {
+    margin: 8px 15px;
+    font-size: 13px;
+  }
+
+  .storyProfile {
+    width: 30px;
+    height: 30px;
+    border-radius: 70%;
+  }
+
+  .storyName {
+    margin: 3px 7px;
+    font-size: 10px;
+  }
+
+  .story {
+    max-height: 30%;
+    height: 300px;
+    margin: 15px 25px;
+    border: 1px solid rgb(163, 160, 160);
+    overflow: scroll;
+  }
+
+  .storyInfo {
+    display: flex;
+    margin: 12px 14px;
+  }
+
+  .storyInfo2 img {
+    flex-basis: auto;
+  }
+
+  .storyInfo .storyName {
+    flex: 1;
+  }
+
+  .storyInfo .follow {
+    flex-basis: auto;
+  }
+
+  .follow {
+    float: right;
+    margin-top: 7px;
+    color: skyblue;
+    font-size: 10px;
+  }
+
+  .storyTextFlex {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 15px;
+    font-size: 10px;
+  }
+
+  .recommend {
+    max-height: 30%;
+    margin: 15px 25px;
+    border: 1px solid rgb(163, 160, 160);
+    overflow: hidden;
+  }
+
+  .textRecommend {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 15px;
+    margin-right: 35px;
+    font-size: 10px;
+  }
+
+  .etc,
+  .copy {
+    margin: 30px 35px;
+    color: rgb(163, 160, 160);
+    font-size: 13px;
+  }
+}

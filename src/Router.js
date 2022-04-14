@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import LoginHyeongJun from './pages/hyeongjunjeon/Login/LoginHyeongJun';
 import MainHyeongJun from './pages/hyeongjunjeon/Main/MainHyeongJun';
@@ -21,7 +21,6 @@ import Nav from './components/Nav/Nav';
 function Router() {
   return (
     <BrowserRouter>
-      <Nav />
       <Routes>
         <Route path="/login-hyeongjun" element={<LoginHyeongJun />} />
         <Route path="/main-hyeongjun" element={<MainHyeongJun />} />
