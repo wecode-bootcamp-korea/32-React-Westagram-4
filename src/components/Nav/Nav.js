@@ -1,28 +1,26 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import './Nav.scss';
 
 const Nav = () => {
   return (
-    <div className="main-container">
+    <>
       <nav className="nav-container">
         <div className="nav-left">
-          <img className="nav-icon" alt="zz" src="images/instagram_icon.png" />
-          <span className="nav-title">&#x0007C; Westagram</span>
+          <i class="fa-brands fa-instagram" />
+          <span className="title">&#x0007C; Westagram</span>
         </div>
         <div className="nav-center">
-          <input className="nav-search" type="text" placeholder="검색" />
+          <input className="search-bar" type="text" placeholder="검색" />
         </div>
         <div className="nav-right">
-          <img className="nav-icon" alt="zz" src="images/explore_icon.png" />
-          <img
-            className="nav-icon"
-            alt="zz"
-            src="images/heart_empty_icon.png"
-          />
-          <img className="nav-icon" alt="zz" src="images/profile_icon.png" />
+          <i class="fa-regular fa-compass" />
+          <i class="fa-regular fa-heart" />
+          <i class="fa-regular fa-user" />
         </div>
       </nav>
-    </div>
+      <Outlet />
+    </>
   );
 };
 
