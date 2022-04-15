@@ -13,3 +13,7 @@ Westagram 팀 프로젝트
 Icon 출처
 
 FontAwesome : https://fontawesome.com/
+
+Image 출처
+
+Pixabay : https://pixabay.com/ko/
