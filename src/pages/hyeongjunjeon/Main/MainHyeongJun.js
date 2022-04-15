@@ -5,7 +5,6 @@ import './MainHyeongJun.scss';
 function Main() {
   return (
     <div>
-      <Nav />
       <main>
         <div className="feeds">
           <article className="article">
