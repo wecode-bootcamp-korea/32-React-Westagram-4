@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginSungYong.scss';
-
 const Login = () => {
+  let [a, b] = useState('');
+
+  function handleIdInput(event) {
+    a = event.target.value;
+    console.log(a);
+    return a;
+  }
   return (
     <div className="login-container">
       <header className="login-header">Westagram</header>
       <main className="login-main">
         <input
+          onChange={handleIdInput}
           id="loginId"
           className="login-input"
           type="text"
@@ -15,6 +22,7 @@ const Login = () => {
         />
         <br />
         <input
+          onChange={handleIdInput}
           id="loginPw"
           className="login-input"
           type="password"

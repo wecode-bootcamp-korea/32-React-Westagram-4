@@ -63,6 +63,8 @@ $instagram-gradient: linear-gradient(
     .img {
       width: 100%;
       height: 500px;
+      border-top: 2px solid #eff0ef;
+      border-bottom: 2px solid #eff0ef;
     }
   }
 
@@ -70,6 +72,7 @@ $instagram-gradient: linear-gradient(
     grid-row: 3 / 4;
     display: flex;
     flex-direction: column;
+    background-color: #ffffff;
 
     .comment-header {
       display: flex;
@@ -281,7 +284,7 @@ $instagram-gradient: linear-gradient(
         position: absolute;
         right: 20px;
         border: 0px;
-        background-color: #ffffff;
+        background-color: #fafbfa;
         font-weight: bold;
         font-size: 15px;
         color: #2994ff;
