@@ -54,6 +54,7 @@ function MainJongHyeok() {
 
   const [liveData, setLiveData] = useState(dummyData);
   const [newCommentData, setnewCommentData] = useState(commentData);
+
   return (
     <div>
       <section className="container-main">

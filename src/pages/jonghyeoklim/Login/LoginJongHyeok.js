@@ -11,14 +11,16 @@ function Login() {
   };
 
   const [Id, setId] = useState('');
-  const idChange = event => {
+  const handleIdInput = event => {
     setId(event.target.value);
   };
 
   const [PassWord, setPassWord] = useState('');
-  const pwChange = event => {
+  const handlePwInput = event => {
     setPassWord(event.target.value);
   };
+
+  const [BtnColor, setBtnColor] = useState();
 
   return (
     <div className="container">
@@ -29,17 +31,17 @@ function Login() {
         <div className="login">
           <input
             className="input-login"
-            onChange={idChange}
+            onChange={handleIdInput}
             type="id"
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <input
             className="input-pw"
-            onChange={pwChange}
+            onChange={handlePwInput}
             type="password"
             placeholder="비밀번호"
           />
-          <button onClick={goToMain} className="button">
+          <button onClick={goToMain} className="button" isSpecial={true}>
             로그인
           </button>
         </div>
