@@ -20,8 +20,6 @@ function Login() {
     setPassWord(event.target.value);
   };
 
-  const [BtnColor, setBtnColor] = useState();
-
   return (
     <div className="container">
       <header className="logo_name">
@@ -41,7 +39,11 @@ function Login() {
             type="password"
             placeholder="비밀번호"
           />
-          <button onClick={goToMain} className="button" isSpecial={true}>
+          <button
+            onClick={goToMain}
+            className="button"
+            disabled={!(Id.search('@') && PassWord.length >= 5)}
+          >
             로그인
           </button>
         </div>

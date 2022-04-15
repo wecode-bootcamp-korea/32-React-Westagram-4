@@ -65,7 +65,10 @@ body {
   padding: 10px 0;
   font-size: 18px;
   border: none;
-  background-color: #c4e0fb;
+  background-color: blue;
+  &:disabled {
+    background-color: #c4e0fb;
+  }
   color: white;
   font-weight: bold;
   border-radius: 5px;

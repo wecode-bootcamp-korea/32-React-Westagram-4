@@ -3,15 +3,15 @@ import './Comment.scss';
 function Comment({ commentInfo }) {
   return (
     <div className="comments-section">
-      <div class="comment">
-        <div class="comment-box">
+      <div className="comment">
+        <div className="comment-box">
           <div>
-            <span class="userId">{commentInfo.userId}</span>
-            <span>{commentInfo.text}</span>
+            <span className="userId">{commentInfo.userId} </span>
+            <span> {commentInfo.text}</span>
           </div>
-          <i class="fa-regular fa-heart" />
+          <i className="fa-regular fa-heart" />
         </div>
-        <div class="comment-time">{commentInfo.createdAtgit}</div>
+        <div className="comment-time">{commentInfo.createdAt}</div>
       </div>
     </div>
   );
