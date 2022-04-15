@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import { faDAndD } from '@fortawesome/free-brands-svg-icons';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginSungYong.scss';
+
 const Login = () => {
   let [value, setValue] = useState();
+  const buttonRef = useRef();
 
   function handleIdInput(event) {
     value = event.target.value;
-    return value;
+    value.includes('@') && value.length > 3
+      ? (buttonRef.current.disabled = false)
+      : (buttonRef.current.disabled = true);
   }
-
   function handlePwInput(event) {
     value = event.target.value;
-    return value;
+    value.length > 5
+      ? (buttonRef.current.disabled = false)
+      : (buttonRef.current.disabled = true);
   }
 
   return (
@@ -34,7 +40,7 @@ const Login = () => {
           placeholder="비밀번호"
         />
         <br />
-        <button id="loginBtn" className="login-btn" type="button" disabled>
+        <button ref={buttonRef} className="login-btn" type="button" disabled>
           로그인
         </button>
       </main>
