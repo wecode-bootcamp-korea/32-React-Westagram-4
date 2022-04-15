@@ -21,22 +21,20 @@ import Nav from './components/Nav/Nav';
 function Router() {
   return (
     <BrowserRouter>
-      <Nav />
       <Routes>
         <Route path="/login-hyeongjun" element={<LoginHyeongJun />} />
-        <Route path="/main-hyeongjun" element={<MainHyeongJun />} />
-
-        <Route path="/login-byounggyu" element={<LoginByoungGyu />} />
-        <Route path="/main-byounggyu" element={<MainByoungGyu />} />
-
-        <Route path="/login-jonghyeok" element={<LoginJongHyeok />} />
-        <Route path="/main-jonghyeok" element={<MainJongHyeok />} />
-
-        <Route path="/login-jaewon" element={<LoginJaeWon />} />
-        <Route path="/main-jaewon" element={<MainJaeWon />} />
-
         <Route path="/login-sungyong" element={<LoginSungYong />} />
-        <Route path="/main-sungyong" element={<MainSungYong />} />
+        <Route path="/login-byounggyu" element={<LoginByoungGyu />} />
+        <Route path="/login-jonghyeok" element={<LoginJongHyeok />} />
+        <Route path="/login-jaewon" element={<LoginJaeWon />} />
+
+        <Route element={<Nav />}>
+          <Route path="/main-sungyong" element={<MainSungYong />} />
+          <Route path="/main-jonghyeok" element={<MainJongHyeok />} />
+          <Route path="/main-hyeongjun" element={<MainHyeongJun />} />
+          <Route path="/main-byounggyu" element={<MainByoungGyu />} />
+          <Route path="/main-jaewon" element={<MainJaeWon />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

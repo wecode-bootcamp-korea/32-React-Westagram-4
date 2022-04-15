@@ -1,69 +1,102 @@
-.main-container {
-  display: grid;
-  grid-template-columns: 10% 2fr 1fr 10%;
-  grid-template-rows: 65px 1fr;
-}
+$instagram-gradient: linear-gradient(
+  to right top,
+  #fcbe66,
+  #f16e36,
+  #bd317f,
+  #9244a0,
+  #9244a0
+);
 
 .nav-container {
   display: grid;
-  grid-column: 1 / 5;
-  grid-row: 1 / 2;
   grid-template-columns: 10% repeat(3, 1fr) 10%;
   align-items: center;
+  height: 65px;
   margin: 0px;
-  border-bottom: 2px solid #EFF0EF;
-  background-color: #FFFFFF;
+  border-bottom: 2px solid #eff0ef;
+  background-color: #ffffff;
 
   .nav-left {
     grid-column: 2 / 3;
     justify-self: left;
 
-    .nav-title {
-      font-family: 'Lobster', cursive;
-      font-size: 30px;
+    i {
+      background: $instagram-gradient;
+      color: transparent;
+      margin-right: 10px;
+      font-size: 25px;
+      font-weight: 800;
+      background-clip: text;
     }
 
-    .nav-icon {
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
+    span {
+      font-family: 'Lobster', cursive;
+      font-size: 30px;
+      background: $instagram-gradient;
+      color: transparent;
+      background-clip: text;
     }
   }
+
   .nav-center {
     grid-column: 3 / 4;
     justify-self: center;
+    position: relative;
 
-    .nav-search {
-      border: 1px solid #BEBFBE;
+    input {
+      border: 2px solid transparent;
+      background-image: linear-gradient(#ffffff, #ffffff), $instagram-gradient;
+      background-origin: border-box;
+      background-clip: content-box, border-box;
       width: 200px;
-      height: 30px;
-      border-radius: 3px;
-      background-color: #FAFBFA;
+      height: 35px;
+      border-radius: 8px;
+      background-color: #fafbfa;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      color: #5e5e5e;
+
       &::placeholder {
-        background-image: url('../../assets/images/search_icon.png');
-        background-size: 15px;
-        background-position: 60px;
+        background-image: url('../../assets/images/sungyongseo/search_icon.png');
+        background-size: 18px;
+        background-position: 50px;
         background-repeat: no-repeat;
-        text-align: center;
       }
+
       &:focus {
-        border: 0px;
-        outline: 2px solid  #BEBFBE;
-      &::placeholder {
-        background-image: none;
-        opacity: 0%;
+        outline: none;
+        animation-name: focus;
+        animation-duration: 1.2s;
+        animation-fill-mode: forwards;
+        caret-color: #bd317f;
+
+        @keyframes focus {
+          from {
+            width: 200px;
+          }
+          to {
+            width: 300px;
+          }
+        }
+
+        &::placeholder {
+          opacity: 0%;
+        }
       }
     }
   }
-}
-.nav-right {
-  grid-column: 4 / 5;
-  justify-self: right;
 
-  .nav-icon {
-    width: 25px;
-    height: 25px;
-    margin-left: 20px;
+  .nav-right {
+    grid-column: 4 / 5;
+    justify-self: right;
+
+    i {
+      background: $instagram-gradient;
+      color: transparent;
+      margin-left: 20px;
+      font-size: 25px;
+      background-clip: text;
+    }
   }
-} 
 }
