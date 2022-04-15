@@ -1,4 +1,3 @@
-import { faDAndD } from '@fortawesome/free-brands-svg-icons';
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginSungYong.scss';

@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MainSungYong.scss';
 
 const Main = () => {
+  let name = 'Wecode';
+  let [input, inputSet] = useState({});
+  let [comment, commentSet] = useState([
+    {
+      name: 'canon_mj',
+      content: '위워크에서 진행한 베이킹 클래스...',
+      time: '29분전',
+      // overflow: '더 보기'
+    },
+    {
+      name: 'neceosecius',
+      content: '거봐 좋았잖아~~~~~',
+      time: '31분전',
+      // overflow: ''
+    },
+  ]);
+
   return (
     <div className="main-container">
       <section className="section-container">
@@ -18,7 +35,6 @@ const Main = () => {
           </div>
           <span className="section-menu">···</span>
         </div>
-
         <article className="section-center">
           <img
             alt="feed img"
@@ -26,7 +42,6 @@ const Main = () => {
             src="images/sungyongseo/feed_img.png"
           />
         </article>
-
         <div className="comment-container">
           <div className="comment-header">
             <div className="header-left">
@@ -38,7 +53,6 @@ const Main = () => {
               <i className="fa-regular fa-bookmark" />
             </div>
           </div>
-
           <div className="comment-center">
             <div className="profile-container">
               <div className="img-box">
@@ -51,29 +65,27 @@ const Main = () => {
               <span className="name">aineworld</span>
               <span className="like">님 외 10명이 좋아합니다.</span>
             </div>
-
-            <div className="history">
-              <div className="name-box">
-                <span className="name">canon_mj</span>
-              </div>
-              <span className="content">
-                위워크에서 진행한 베이킹 클래스...
-              </span>
-              <span className="content-time">42분전</span>
-            </div>
-
-            <div className="history">
-              <div className="name-box">
-                <span className="name">neceosecius</span>
-              </div>
-              <span className="content">거봐 좋았잖아~~~~~ &#x1F981;</span>
-              <span className="content-time">42분전</span>
-            </div>
+            <AddComment comment={comment} />
           </div>
-
           <div className="comment-footer">
-            <input className="comment" type="text" placeholder="댓글 달기..." />
-            <button className="push" type="button">
+            <input
+              className="comment"
+              onChange={e => {
+                inputSet({ name: name, content: e.target.value, time: 'g' });
+              }}
+              type="text"
+              placeholder="댓글 달기..."
+            />
+
+            <button
+              onClick={() => {
+                let arrayComment = [...comment];
+                arrayComment.push(input);
+                commentSet(arrayComment);
+              }}
+              className="push"
+              type="button"
+            >
               게시
             </button>
           </div>
@@ -171,7 +183,7 @@ const Main = () => {
               <div className="name-box">
                 <span className="name">joaaaaaaahye</span>
                 <span className="name-sub">_legend_a님 외 2명이...</span>
-                <button className="right-box-btn" type="button" disabled>
+                <button className="follow-btn" type="button" disabled>
                   팔로우
                 </button>
               </div>
@@ -187,7 +199,7 @@ const Main = () => {
               <div className="name-box">
                 <span className="name">rampart81</span>
                 <span className="name-sub">ringo.in.seoul님 외 12...</span>
-                <button className="right-box-btn" type="button" disabled>
+                <button className="follow-btn" type="button" disabled>
                   팔로우
                 </button>
               </div>
@@ -225,5 +237,19 @@ const Main = () => {
     </div>
   );
 };
+
+function AddComment(props) {
+  return props.comment.map(function History(param, i) {
+    return (
+      <div className="history" key={i}>
+        <div className="name-box">
+          <span className="name">{props.comment[i].name}</span>
+        </div>
+        <span className="content">{props.comment[i].content}</span>
+        <span className="content-time">{props.comment[i].time}</span>
+      </div>
+    );
+  });
+}
 
 export default Main;
