@@ -1,3 +1,13 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
 .login-container {
   display: grid;
   grid-template-columns: 30px auto 30px;
@@ -5,10 +15,13 @@
       100px,
       auto
     );
+  width: 50%;
+  height: 100%;
   place-content: center;
   place-items: center;
-  place-self: center;
   border: 2px solid #e2e2e2;
+  border-top: none;
+  border-bottom: none;
   background-color: #ffffff;
 
   .login-header {

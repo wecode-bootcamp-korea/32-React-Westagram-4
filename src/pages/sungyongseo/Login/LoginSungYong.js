@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <header className="login-header">Westagram</header>
-      <article className="login-main">
+      <main className="login-main">
         <input
           id="loginId"
           className="login-input"
@@ -24,12 +24,9 @@ const Login = () => {
         <button id="loginBtn" className="login-btn" type="button" disabled>
           로그인
         </button>
-      </article>
+      </main>
       <footer className="login-footer">
-        <a className="forgot-id" href="/">
-          비밀번호를 잊으셨나요?
-        </a>
-        <Link to="/main-sungyong">메인</Link>
+        <Link to="/main-sungyong">비밀번호를 잊으셨나요?</Link>
       </footer>
     </div>
   );
