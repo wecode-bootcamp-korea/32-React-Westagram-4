@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginSungYong.scss';
 const Login = () => {
-  let [a, b] = useState('');
+  let [value, setValue] = useState();
 
   function handleIdInput(event) {
-    a = event.target.value;
-    console.log(a);
-    return a;
+    value = event.target.value;
+    return value;
   }
+
+  function handlePwInput(event) {
+    value = event.target.value;
+    return value;
+  }
+
   return (
     <div className="login-container">
       <header className="login-header">Westagram</header>
@@ -22,7 +27,7 @@ const Login = () => {
         />
         <br />
         <input
-          onChange={handleIdInput}
+          onChange={handlePwInput}
           id="loginPw"
           className="login-input"
           type="password"
