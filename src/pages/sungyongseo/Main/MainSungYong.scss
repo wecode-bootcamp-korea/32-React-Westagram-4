@@ -1,38 +1,52 @@
+$instagram-gradient: linear-gradient(
+  to right top,
+  #fcbe66,
+  #f16e36,
+  #bd317f,
+  #9244a0,
+  #9244a0
+);
+
 .main-container {
   display: grid;
-  grid-template-columns: 10% 2fr 1fr 10%;
+  grid-template-columns: 10% 2fr 3% 1fr 10%;
+  grid-template-rows: 3% 1fr;
 }
 
 .section-container {
   grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
   width: 100%;
-  margin-top: 50px;
   border: 2px solid #eff0ef;
 
   .section-header {
+    grid-row: 1 / 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
-    padding: 10px 20px;
-
+    padding: 10px 15px;
+    height: 80px;
     .profile-container {
       display: flex;
       align-items: center;
-      .profile-img-box {
+
+      .img-box {
         width: 50px;
         height: 50px;
         border-radius: 70%;
         overflow: hidden;
         margin-right: 15px;
 
-        .profile-img {
+        .img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
-      .profile-name {
+      .name {
         font-size: 20px;
         font-weight: bold;
       }
@@ -44,38 +58,45 @@
     }
   }
 
-  .article-img {
-    width: 100%;
-    height: 500px;
+  .section-center {
+    grid-row: 2 / 3;
+    .img {
+      width: 100%;
+      height: 500px;
+    }
   }
 
-  .section-footer {
+  .comment-container {
+    grid-row: 3 / 4;
     display: flex;
     flex-direction: column;
-    .header {
+
+    .comment-header {
       display: flex;
       justify-content: space-between;
       padding: 10px 20px;
 
       .header-left {
-        .icon {
-          width: 25px;
-          height: 25px;
+        i {
+          font-size: 20px;
           margin-right: 10px;
         }
       }
+
       .header-right {
-        .icon {
-          width: 25px;
-          height: 25px;
+        i {
+          font-size: 20px;
         }
       }
     }
 
-    .comment-main {
+    .comment-center {
+      padding: 0px 20px;
+
       .profile-container {
         display: flex;
         align-items: center;
+
         .img-box {
           width: 35px;
           height: 35px;
@@ -89,21 +110,156 @@
             object-fit: cover;
           }
         }
+
         .name {
           font-size: 15px;
           font-weight: bold;
         }
+
         .like {
           font-size: 15px;
         }
+      }
+
+      .history {
+        margin: 10px 0px;
+        .name-box {
+          display: inline-block;
+          width: 110px;
+
+          .name {
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+
+        .content {
+          font-size: 14px;
+        }
+
+        .content-time {
+          font-size: 13px;
+          color: #949494;
+        }
+      }
+    }
+
+    .comment-footer {
+      position: relative;
+      margin-top: 10px;
+      input {
+        width: 100%;
+        height: 50px;
+        padding-left: 20px;
+        border: 0px;
+        border-top: 2px solid #eff0ef;
+        color: #5e5e5e;
+
+        &:focus {
+          outline: none;
+          border: 2px solid;
+          border-image: $instagram-gradient;
+          border-image-slice: 1;
+          caret-color: #bd317f;
+        }
+      }
+
+      button {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        border: 0px;
+        background: $instagram-gradient;
+        background-clip: text;
+        color: transparent;
+        opacity: 30%;
+        font-size: 18px;
+        font-weight: bold;
       }
     }
   }
 }
 
 .aside-container {
-  grid-column: 3 / 4;
-  width: 100%;
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-rows: 5% repeat(2, 2fr) 10%;
+
+  .aside-header {
+    grid-row: 1 / 2;
+    padding: 10px 0px;
+    .profile-container {
+      display: flex;
+      align-items: center;
+
+      .img-box {
+        width: 50px;
+        height: 50px;
+        border-radius: 70%;
+        overflow: hidden;
+        margin-right: 15px;
+
+        .img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .name-box {
+        display: flex;
+        flex-direction: column;
+        .name {
+          font-size: 15px;
+          font-weight: bold;
+        }
+
+        .name-sub {
+          margin-top: 5px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .aside-center {
+    grid-row: 2 / 3;
+    padding: 10px 0px;
+    .profile-container {
+      display: flex;
+      align-items: center;
+
+      .img-box {
+        width: 50px;
+        height: 50px;
+        border-radius: 70%;
+        overflow: hidden;
+        margin-right: 15px;
+
+        .img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .name-box {
+        display: flex;
+        flex-direction: column;
+        .name {
+          font-size: 15px;
+          font-weight: bold;
+        }
+
+        .name-sub {
+          margin-top: 5px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .aside-footer {
+  }
 }
 
 .comment-profile-box {
@@ -178,28 +334,7 @@
   margin: 0px 10px;
   text-align: center;
 }
-.comment-input {
-  position: relative;
-  width: 100%;
-  height: 50px;
-  border: 0px;
-  padding-left: 20px;
-  border-top: 2px solid #eff0ef;
-}
-.comment-input:focus {
-  border: 0px;
-  outline: 2px solid #bebfbe;
-}
 
-.comment-btn {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  border: 0px;
-  font-size: 15px;
-  background-color: #ffffff;
-  color: #ccdff9;
-}
 .right-main {
   border: 1px solid #eff0ef;
   margin: 10px 0px;
