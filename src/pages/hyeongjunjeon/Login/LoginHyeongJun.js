@@ -7,11 +7,6 @@ function Login() {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
   const navigate = useNavigate();
-
-  const goToMain = () => {
-    navigate('/main-hyeongjun');
-  };
-
   const handleIdInput = e => {
     setId(e.target.value);
     console.log('id:', e.target.value);
@@ -22,12 +17,17 @@ function Login() {
     console.log('pw:', e.target.value);
   };
 
-  const [active, setAcvtive] = useState(false);
+  const goToMain = () => {
+    navigate('/main-hyeongjun');
+  };
+  const [active, setAcvtive] = useState(true);
+
   const PassedLogin = () => {
     return id.includes('@') && pw.length > 4
-      ? setAcvtive(true)
-      : setAcvtive(false);
+      ? setAcvtive(false)
+      : setAcvtive(true);
   };
+
   return (
     <div>
       <div className="Login">
@@ -55,8 +55,9 @@ function Login() {
             </div>
             <div className="loginButton">
               <button
-                className={active ? 'activeBt' : 'unActiveBt'}
+                className={!active ? 'activeBt' : 'unActiveBt'}
                 onClick={goToMain}
+                disabled={active}
               >
                 로그인
               </button>

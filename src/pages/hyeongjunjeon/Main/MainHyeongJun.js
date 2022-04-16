@@ -1,8 +1,21 @@
-import React from 'react';
-import Nav from '../../../components/Nav/Nav';
+import React, { useState } from 'react';
 import './MainHyeongJun.scss';
 
 function Main() {
+  const [comment1, setComment1] = useState('');
+  const handleOnChange = event => {
+    setComment1(event.target.value);
+  };
+
+  const [commentContainer, setCommentContainer] = useState([]);
+  const handleOnSubmit = event => {
+    event.preventDefault();
+    if (comment1 === '') {
+      return;
+    }
+    setCommentContainer(commentValueList => [...commentValueList, comment1]);
+    setComment1('');
+  };
   return (
     <div>
       <main>
@@ -46,35 +59,47 @@ function Main() {
                     className="likePerson"
                   />
                   <span className="aine">
-                    <strong>aineworld</strong>님 <strong>외 10명</strong>이
-                    좋아합니다
+                    <span className="boldText">aineworld</span>님{' '}
+                    <span className="boldText">외 10명</span>이 좋아합니다
                   </span>
                 </div>
                 <div className="comment">
                   <div className="mj">
-                    <strong>canon_mj</strong> 위워크에서 진행한 베이킹 클래스..
+                    <span className="boldText">canon_mj</span> 위워크에서 진행한
+                    베이킹 클래스..
                     <span className="more">더 보기</span>
                   </div>
                   <div>
-                    <strong>neceosecius</strong> 거봐 좋았잖아~~~~~😁
+                    <span className="boldText">neceosecius</span> 거봐
+                    좋았잖아~~~~~😁
                   </div>
                 </div>
+                <ul className="userCommentList">
+                  {commentContainer.map((value, index) => (
+                    <li key={index}>
+                      <span className="commentUserId">user_Id </span>
+                      {value}
+                    </li>
+                  ))}
+                </ul>
                 <div className="beforeFourtyTwo">42분 전</div>
               </div>
             </figure>
-            <div className="commentBox">
+
+            <form className="commentBox" onSubmit={handleOnSubmit}>
               <div>
                 <input
                   type="text"
                   placeholder="댓글 달기..."
                   className="inputComment"
-                  onkeyup="enterkey()"
+                  value={comment1}
+                  onChange={handleOnChange}
                 />
               </div>
               <div>
                 <button className="commentBtn">게시</button>
               </div>
-            </div>
+            </form>
           </article>
         </div>
 
