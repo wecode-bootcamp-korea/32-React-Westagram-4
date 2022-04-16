@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './MainHyeongJun.scss';
+import Comment from '../Components/Comment';
 
 function Main() {
   const [comment1, setComment1] = useState('');
@@ -74,14 +75,7 @@ function Main() {
                     좋았잖아~~~~~😁
                   </div>
                 </div>
-                <ul className="userCommentList">
-                  {commentContainer.map((value, index) => (
-                    <li key={index}>
-                      <span className="commentUserId">user_Id </span>
-                      {value}
-                    </li>
-                  ))}
-                </ul>
+                <Comment container={commentContainer} />
                 <div className="beforeFourtyTwo">42분 전</div>
               </div>
             </figure>
