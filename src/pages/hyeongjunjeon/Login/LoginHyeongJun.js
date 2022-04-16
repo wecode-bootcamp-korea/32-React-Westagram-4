@@ -22,6 +22,12 @@ function Login() {
     console.log('pw:', e.target.value);
   };
 
+  const [active, setAcvtive] = useState(false);
+  const PassedLogin = () => {
+    return id.includes('@') && pw.length > 4
+      ? setAcvtive(true)
+      : setAcvtive(false);
+  };
   return (
     <div>
       <div className="Login">
@@ -35,6 +41,7 @@ function Login() {
                 className="idBox"
                 placeholder="전화번호,사용자 이름 또는 이메일"
                 onChange={handleIdInput}
+                onKeyUp={PassedLogin}
               />
             </div>
             <div className="password">
@@ -43,10 +50,14 @@ function Login() {
                 class="pwBox"
                 placeholder="비밀번호"
                 onChange={handlePwInput}
+                onKeyUp={PassedLogin}
               />
             </div>
             <div className="loginButton">
-              <button className="button" onClick={goToMain}>
+              <button
+                className={active ? 'activeBt' : 'unActiveBt'}
+                onClick={goToMain}
+              >
                 로그인
               </button>
             </div>

@@ -58,4 +58,13 @@
     margin-top: 90px;
     color: rgba(var(--fe0, 0, 55, 107), 1);
   }
+
+  .unActiveBt {
+    background-color: #b2dffc;
+    color: #fff;
+  }
+
+  .activeBt {
+    background-color: #0095f6;
+  }
 }
