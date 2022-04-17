@@ -11,8 +11,9 @@ function Login() {
   };
 
   const [Id, setId] = useState('');
-  const handleIdInput = event => {
-    setId(event.target.value);
+
+  const handleIdInput = e => {
+    setId(e.target.value);
   };
 
   const [PassWord, setPassWord] = useState('');

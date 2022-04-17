@@ -14,3 +14,16 @@
   color: gray;
   margin-bottom: 5px;
 }
+
+.fa-trash-can {
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.isLiked {
+  color: red;
+}
+
+.fa-heart {
+  transition: 0.5s;
+}

@@ -29,31 +29,96 @@ function MainJongHyeok() {
     },
   ];
 
-  const commentData = [
-    {
-      userId: 'lotso',
-      text: '아라라라',
-      createdAt: '10분 전',
-    },
-    {
-      userId: 'so',
-      text: '아라라',
-      createdAt: '1분 전',
-    },
-    {
-      userId: 'sw234o',
-      text: '아dsklfnl',
-      createdAt: '12분 전',
-    },
-    {
-      userId: '090o',
-      text: '아kadsjhjk라',
-      createdAt: '6분 전',
-    },
-  ];
+  // const dummyComments = [
+  //   {
+  //     id: 1,
+  //     userId: 'lotso',
+  //     text: '아라라라',
+  //     isLiked: true,
+  //     createdAt: '10분 전',
+  //   },
+  //   {
+  //     id: 2,
+  //     userId: 'so',
+  //     text: '아라라',
+  //     isLiked: false,
+  //     createdAt: '1분 전',
+  //   },
+  //   {
+  //     id: 3,
+  //     userId: 'sw234o',
+  //     text: '아dsklfnl',
+  //     isLiked: false,
+  //     createdAt: '12분 전',
+  //   },
+  //   {
+  //     id: 4,
+  //     userId: '090o',
+  //     text: '아kadsjhjk라',
+  //     isLiked: true,
+  //     createdAt: '6분 전',
+  //   },
+  // ];
 
   const [liveData, setLiveData] = useState(dummyData);
-  const [newCommentData, setnewCommentData] = useState(commentData);
+  const [commentsList, setCommentsList] = useState([]);
+  const [newComment, setNewComment] = useState(''); //문자열. 새 댓글 '내용'
+
+  const handleComment = e => {
+    // console.log(e.target.value);
+    setNewComment(e.target.value);
+  };
+
+  const addComment = () => {
+    //newComment를 commentList배열에다가 담는다~!
+    //기존 자바스크립트 코드에서는 commentsList.push
+    //리액트에서는 기존 상태를 직접 수정하게 되면, 값을 바꿔도 리렌더링이 되지 않으므로--> push 사용 불가!
+    //concat을 사용해야 함(or 구조분해할당(...))
+    if (newComment === '') {
+      return;
+    }
+
+    const newCommentData = [
+      ...commentsList,
+      {
+        id: Math.floor(Math.random() * 100),
+        userId: 'jonghyeok',
+        text: newComment,
+        isLiked: false,
+        createdAt: '16분전',
+      },
+    ];
+    setCommentsList(newCommentData);
+    setNewComment('');
+  };
+
+  const handleCommentEnter = e => {
+    if (e.key === 'Enter') {
+      addComment();
+    }
+  };
+
+  const handleDelete = id => {
+    const index = commentsList.findIndex(value => value.id === id);
+    const deleteCommentList = [
+      ...commentsList.slice(0, index),
+      ...commentsList.slice(index + 1),
+    ];
+    setCommentsList(deleteCommentList);
+  };
+
+  const handleLike = id => {
+    const index = commentsList.findIndex(value => value.id === id);
+    const isLikedCommentList = [...commentsList];
+    if (isLikedCommentList[index].isLiked === true) {
+      isLikedCommentList[index].isLiked = false;
+    } else {
+      isLikedCommentList[index].isLiked = true;
+    }
+    setCommentsList(isLikedCommentList);
+  };
+
+  // console.log(commentsList);
 
   return (
     <div>
@@ -107,17 +172,26 @@ function MainJongHyeok() {
                   <span>위워크에서 진행한 베이킹 클래스~</span>
                 </div>
               </div>
-              {newCommentData.map((value, i) => (
-                <Comment key={i} commentInfo={value} />
+              {commentsList.map((value, i) => (
+                <Comment
+                  key={i}
+                  commentInfo={value}
+                  handleDelete={handleDelete}
+                  handleLike={handleLike}
+                />
               ))}
               <div className="writing-section">
                 <input
                   className="writing-input"
                   type="text"
                   placeholder="댓글 달기..."
-                  onKeyUp="onKeyUp(event)"
+                  value={newComment}
+                  onChange={handleComment}
+                  onKeyUp={e => handleCommentEnter(e)}
                 />
-                <button className="writing-btn">게시</button>
+                <button className="writing-btn" onClick={addComment}>
+                  게시
+                </button>
               </div>
             </article>
           </section>
