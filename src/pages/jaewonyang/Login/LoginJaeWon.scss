@@ -37,7 +37,8 @@
       border-radius: 4px;
       padding-left: 8px;
     }
-    button {
+
+    .login__btn {
       width: 75%;
       height: 35px;
       outline: none;
@@ -48,7 +49,12 @@
       font-size: medium;
       margin-bottom: 60px;
     }
+
+    .active {
+      background-color: #0095f6;
+    }
   }
+
   a {
     text-decoration: none;
     color: #003569;

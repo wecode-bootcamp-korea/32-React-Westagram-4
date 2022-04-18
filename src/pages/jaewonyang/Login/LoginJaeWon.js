@@ -9,9 +9,11 @@ const LoginJaeWon = () => {
   const goToMain = () => {
     navigate('/main-jaewon');
   };
+
   const handleIdInput = event => {
     setIdInput(event.target.value);
   };
+
   const handlePwInput = event => {
     setPwInput(event.target.value);
   };
@@ -34,7 +36,14 @@ const LoginJaeWon = () => {
             onChange={handlePwInput}
           />
         </form>
-        <button className="login__btn" onClick={goToMain}>
+        <button
+          className={
+            idInput.includes('@') && pwInput.length >= 5
+              ? 'login__btn active'
+              : 'login__btn'
+          }
+          onClick={goToMain}
+        >
           로그인
         </button>
         <a href="https://www.naver.com/" className="notice">
@@ -44,5 +53,4 @@ const LoginJaeWon = () => {
     </body>
   );
 };
-
 export default LoginJaeWon;
