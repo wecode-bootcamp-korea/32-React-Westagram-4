@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './LoginJaeWon.scss';
 import { useNavigate } from 'react-router-dom';
 
 const LoginJaeWon = () => {
+  const [idInput, setIdInput] = useState('');
+  const [pwInput, setPwInput] = useState('');
   const navigate = useNavigate();
-
   const goToMain = () => {
     navigate('/main-jaewon');
+  };
+  const handleIdInput = event => {
+    setIdInput(event.target.value);
+  };
+  const handlePwInput = event => {
+    setPwInput(event.target.value);
   };
 
   return (
@@ -18,11 +25,13 @@ const LoginJaeWon = () => {
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
             className="input input__id"
+            onChange={handleIdInput}
           />
           <input
             type="password"
             placeholder="비밀번호"
             className="input input__pw"
+            onChange={handlePwInput}
           />
         </form>
         <button className="login__btn" onClick={goToMain}>
