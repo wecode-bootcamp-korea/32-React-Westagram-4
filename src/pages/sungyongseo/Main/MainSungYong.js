@@ -3,6 +3,7 @@ import './MainSungYong.scss';
 
 const Main = () => {
   let name = 'Wecode';
+
   let [input, inputSet] = useState({});
   let [comment, commentSet] = useState([
     {
@@ -71,7 +72,11 @@ const Main = () => {
             <input
               className="comment"
               onChange={e => {
-                inputSet({ name: name, content: e.target.value, time: 'g' });
+                inputSet({
+                  name: name,
+                  content: e.target.value,
+                  time: '방금 전',
+                });
               }}
               type="text"
               placeholder="댓글 달기..."
