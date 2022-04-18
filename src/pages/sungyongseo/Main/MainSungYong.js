@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './MainSungYong.scss';
 
 const Main = () => {
-  let name = 'Wecode';
+  const [commentList, setCommentList] = useState([]);
 
-  let [input, inputSet] = useState({});
-  let [comment, commentSet] = useState([
-    {
-      name: 'canon_mj',
-      content: '위워크에서 진행한 베이킹 클래스...',
-      time: '29분전',
-      // overflow: '더 보기'
-    },
-    {
-      name: 'neceosecius',
-      content: '거봐 좋았잖아~~~~~',
-      time: '31분전',
-      // overflow: ''
-    },
-  ]);
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setCommentList(data);
+      });
+  }, []);
+
+  let [input, inputSet] = useState('');
+  let [commentBtn, setCommentBtn] = useState(true);
+  let [boolean, setBoolean] = useState(false);
 
   return (
     <div className="main-container">
@@ -46,7 +44,19 @@ const Main = () => {
         <div className="comment-container">
           <div className="comment-header">
             <div className="header-left">
-              <i className="fa-regular fa-heart" />
+              <i
+                onClick={() => {
+                  setBoolean(!boolean);
+                }}
+                className={
+                  boolean === false
+                    ? 'fa-regular fa-heart'
+                    : 'fa-solid fa-heart'
+                }
+                style={
+                  boolean === false ? { color: 'black' } : { color: 'red' }
+                }
+              />
               <i className="fa-regular fa-comment" />
               <i className="fa-solid fa-arrow-up-from-bracket" />
             </div>
@@ -66,32 +76,53 @@ const Main = () => {
               <span className="name">aineworld</span>
               <span className="like">님 외 10명이 좋아합니다.</span>
             </div>
-            <AddComment comment={comment} />
+            <AddComment commentList={commentList} />
           </div>
           <div className="comment-footer">
             <input
               className="comment"
-              onChange={e => {
-                inputSet({
-                  name: name,
-                  content: e.target.value,
-                  time: '방금 전',
-                });
-              }}
+              onChange={ControlInput}
+              value={input}
+              onKeyUp={
+                commentBtn === false
+                  ? e => {
+                      if (input !== '' && e.key === 'Enter') {
+                        let arrayComment = [...commentList];
+                        arrayComment.push({
+                          userName: 'wecode',
+                          content: input,
+                          // time: '방금 전',
+                          // overflow: '더 보기',
+                        });
+                        setCommentList(arrayComment);
+                        setCommentBtn(true);
+                        inputSet('');
+                      }
+                    }
+                  : null
+              }
               type="text"
               placeholder="댓글 달기..."
             />
 
             <button
-              onClick={() => {
-                let arrayComment = [...comment];
-                arrayComment.push(input);
-                commentSet(arrayComment);
+              onClick={e => {
+                let arrayComment = [...commentList];
+                arrayComment.push({
+                  userName: 'wecode',
+                  content: input,
+                  // time: '방금 전',
+                  // overflow: '더 보기',
+                });
+                setCommentList(arrayComment);
+                inputSet('');
+                setCommentBtn(true);
               }}
+              disabled={commentBtn === true ? true : false}
               className="push"
               type="button"
             >
-              게시
+              <i className="fa-solid fa-paper-plane" />
             </button>
           </div>
         </div>
@@ -241,17 +272,36 @@ const Main = () => {
       <footer className="footer-container" />
     </div>
   );
+
+  function ControlInput(e) {
+    inputSet(e.target.value);
+
+    e.target.value === '' || e.target.value === null
+      ? setCommentBtn(true)
+      : setCommentBtn(false);
+  }
 };
 
 function AddComment(props) {
-  return props.comment.map(function History(param, i) {
+  return props.commentList.map(function History(param, i) {
     return (
       <div className="history" key={i}>
         <div className="name-box">
-          <span className="name">{props.comment[i].name}</span>
+          <span className="name">{props.commentList[i].userName}</span>
         </div>
-        <span className="content">{props.comment[i].content}</span>
-        <span className="content-time">{props.comment[i].time}</span>
+
+        {props.commentList[i].content.length > 15 ? (
+          <>
+            <span className="content">{props.commentList[i].content}...</span>
+            {/* <span className="content-overflow">
+              {props.commentList[i].overflow}
+            </span> */}
+          </>
+        ) : (
+          <span className="content">{props.commentList[i].content}</span>
+        )}
+
+        {/* <span className="content-time">{props.commentList[i].time}</span> */}
       </div>
     );
   });

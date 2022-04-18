@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import './Nav.scss';
 
 const Nav = () => {
+  const [userList, setUserList] = useState([]);
+
+  useEffect(() => {
+    fetch('uri');
+  });
+
   return (
     <>
       <nav className="nav-container">

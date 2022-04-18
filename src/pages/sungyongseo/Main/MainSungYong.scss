@@ -140,9 +140,14 @@ $instagram-gradient: linear-gradient(
           font-size: 14px;
         }
 
-        .content-time {
-          margin-left: 15px;
+        .content-overflow {
+          margin-left: 3px;
           font-size: 13px;
+          color: #5a5a5a;
+        }
+        .content-time {
+          margin-left: 10px;
+          font-size: 12px;
           color: #949494;
         }
       }
@@ -176,9 +181,16 @@ $instagram-gradient: linear-gradient(
         background: $instagram-gradient;
         background-clip: text;
         color: transparent;
-        opacity: 30%;
+        opacity: 100%;
         font-size: 18px;
         font-weight: bold;
+        cursor: pointer;
+
+        &:disabled {
+          opacity: 30%;
+          cursor: auto;
+          color: #5e5e5e;
+        }
       }
     }
   }
@@ -301,6 +313,22 @@ $instagram-gradient: linear-gradient(
     text-align: left;
     color: #bebfbe;
     font-weight: bold;
+    cursor: pointer;
+
+    span:hover {
+      background: $instagram-gradient;
+      background-clip: text;
+      color: transparent;
+    }
+    p {
+      margin-top: 15px;
+
+      &:hover {
+        background: $instagram-gradient;
+        background-clip: text;
+        color: transparent;
+      }
+    }
   }
 }
 
