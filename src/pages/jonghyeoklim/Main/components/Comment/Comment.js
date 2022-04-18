@@ -9,13 +9,20 @@ function Comment({ commentInfo, handleDelete, handleLike }) {
   //   createdAt: '10분 전',
   // }
 
+  // {
+  //   "id": 3,
+  //   "userName": "jayPark",
+  //   "content": "Hey.",
+  //   "isLiked": false
+  // }
+
   return (
     <div className="comments-section">
       <div className="comment">
         <div className="comment-box">
           <div>
-            <span className="userId">{commentInfo.userId} </span>
-            <span> {commentInfo.text}</span>
+            <span className="userId">{commentInfo.userName} </span>
+            <span> {commentInfo.content}</span>
           </div>
           <div>
             <i

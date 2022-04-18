@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Recommendation from './components/Recommendation/Recommendation';
 import Story from './components/Story/Story';
@@ -29,40 +29,20 @@ function MainJongHyeok() {
     },
   ];
 
-  // const dummyComments = [
-  //   {
-  //     id: 1,
-  //     userId: 'lotso',
-  //     text: '아라라라',
-  //     isLiked: true,
-  //     createdAt: '10분 전',
-  //   },
-  //   {
-  //     id: 2,
-  //     userId: 'so',
-  //     text: '아라라',
-  //     isLiked: false,
-  //     createdAt: '1분 전',
-  //   },
-  //   {
-  //     id: 3,
-  //     userId: 'sw234o',
-  //     text: '아dsklfnl',
-  //     isLiked: false,
-  //     createdAt: '12분 전',
-  //   },
-  //   {
-  //     id: 4,
-  //     userId: '090o',
-  //     text: '아kadsjhjk라',
-  //     isLiked: true,
-  //     createdAt: '6분 전',
-  //   },
-  // ];
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setCommentsList(data);
+      });
+  }, []);
 
   const [liveData, setLiveData] = useState(dummyData);
   const [commentsList, setCommentsList] = useState([]);
   const [newComment, setNewComment] = useState(''); //문자열. 새 댓글 '내용'
+  const [mainLike, setMainLike] = useState(false);
 
   const handleComment = e => {
     // console.log(e.target.value);
@@ -82,8 +62,8 @@ function MainJongHyeok() {
       ...commentsList,
       {
         id: Math.floor(Math.random() * 100),
-        userId: 'jonghyeok',
-        text: newComment,
+        userName: 'jonghyeok',
+        content: newComment,
         isLiked: false,
         createdAt: '16분전',
       },
@@ -105,6 +85,14 @@ function MainJongHyeok() {
       ...commentsList.slice(index + 1),
     ];
     setCommentsList(deleteCommentList);
+  };
+
+  const handleMainLike = () => {
+    if (mainLike === true) {
+      setMainLike(false);
+    } else {
+      setMainLike(true);
+    }
   };
 
   const handleLike = id => {
@@ -148,7 +136,17 @@ function MainJongHyeok() {
               </div>
               <div className="icon-section">
                 <div>
-                  <i className="fa-regular fa-heart contents-heart" />
+                  {mainLike ? (
+                    <i
+                      className="fa-solid fa-heart contents-heart isLiked"
+                      onClick={handleMainLike}
+                    />
+                  ) : (
+                    <i
+                      className="fa-regular fa-heart contents-heart"
+                      onClick={handleMainLike}
+                    />
+                  )}
                   <i className="fa-regular fa-comment" />
                   <i className="fa-solid fa-arrow-up-from-bracket" />
                 </div>
