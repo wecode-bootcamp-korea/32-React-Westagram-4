@@ -18,15 +18,15 @@ body {
   justify-content: center;
 }
 
-.main-right {
-  width: 35%;
-  height: 75%;
-  margin-left: 5px;
+.feed-wrap {
+  width: 70%;
 }
 
 .main-right {
+  width: 30%;
   margin-top: 25px;
 }
+
 .wecode-desc {
   display: flex;
   align-items: center;
@@ -99,4 +99,5 @@ input:focus {
 
 .westa-footer {
   margin-bottom: 20px;
+  margin-top: 10px;
 }

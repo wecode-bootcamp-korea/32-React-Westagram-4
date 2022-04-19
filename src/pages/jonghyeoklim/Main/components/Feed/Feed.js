@@ -1,17 +1,79 @@
+import { useEffect, useState } from 'react';
+import Comment from '../Comment/Comment';
 import './Feed.scss';
 
-function Feed({
-  mainLike,
-  handleMainLike,
-  commentsList,
-  Comment,
-  handleDelete,
-  handleLike,
-  newComment,
-  handleComment,
-  handleCommentEnter,
-  addComment,
-}) {
+function Feed() {
+  const [commentsList, setCommentsList] = useState([]);
+  const [newComment, setNewComment] = useState('');
+  const [mainLike, setMainLike] = useState(false);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setCommentsList(data);
+      });
+  }, []);
+
+  const handleComment = e => {
+    setNewComment(e.target.value);
+  };
+
+  const addComment = () => {
+    if (newComment === '') {
+      return;
+    }
+
+    const newCommentData = [
+      ...commentsList,
+      {
+        id: Math.floor(Math.random() * 100),
+        userName: 'jonghyeok',
+        content: newComment,
+        isLiked: false,
+        createdAt: '16분전',
+      },
+    ];
+    setCommentsList(newCommentData);
+    setNewComment('');
+  };
+
+  const handleCommentEnter = e => {
+    if (e.key === 'Enter') {
+      addComment();
+    }
+  };
+
+  const handleDelete = id => {
+    const index = commentsList.findIndex(value => value.id === id);
+    const deleteCommentList = [
+      ...commentsList.slice(0, index),
+      ...commentsList.slice(index + 1),
+    ];
+    setCommentsList(deleteCommentList);
+  };
+
+  const handleMainLike = () => {
+    if (mainLike === true) {
+      setMainLike(false);
+    } else {
+      setMainLike(true);
+    }
+  };
+
+  const handleLike = id => {
+    const index = commentsList.findIndex(value => value.id === id);
+    const isLikedCommentList = [...commentsList];
+    if (isLikedCommentList[index].isLiked === true) {
+      isLikedCommentList[index].isLiked = false;
+    } else {
+      isLikedCommentList[index].isLiked = true;
+    }
+    setCommentsList(isLikedCommentList);
+  };
+
   return (
     <section className="feeds">
       <article className="article">
@@ -71,9 +133,9 @@ function Feed({
             <span>위워크에서 진행한 베이킹 클래스~</span>
           </div>
         </div>
-        {commentsList.map((value, i) => (
+        {commentsList.map(value => (
           <Comment
-            key={i}
+            key={value.id}
             commentInfo={value}
             handleDelete={handleDelete}
             handleLike={handleLike}

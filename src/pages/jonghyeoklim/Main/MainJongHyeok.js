@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import Feed from './components/Feed/Feed';
 import Recommendation from './components/Recommendation/Recommendation';
 import Story from './components/Story/Story';
-import Comment from './components/Comment/Comment';
 import './MainJongHyeok.scss';
 
 function MainJongHyeok() {
@@ -30,98 +28,16 @@ function MainJongHyeok() {
     },
   ];
 
-  useEffect(() => {
-    fetch('http://localhost:3000/data/commentData.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        setCommentsList(data);
-      });
-  }, []);
-
   const [liveData, setLiveData] = useState(dummyData);
-  const [feedList, setFeedList] = useState([Feed]);
-  const [commentsList, setCommentsList] = useState([]);
-  const [newComment, setNewComment] = useState('');
-  const [mainLike, setMainLike] = useState(false);
-
-  const handleComment = e => {
-    setNewComment(e.target.value);
-  };
-
-  const addComment = () => {
-    if (newComment === '') {
-      return;
-    }
-
-    const newCommentData = [
-      ...commentsList,
-      {
-        id: Math.floor(Math.random() * 100),
-        userName: 'jonghyeok',
-        content: newComment,
-        isLiked: false,
-        createdAt: '16분전',
-      },
-    ];
-    setCommentsList(newCommentData);
-    setNewComment('');
-  };
-
-  const handleCommentEnter = e => {
-    if (e.key === 'Enter') {
-      addComment();
-    }
-  };
-
-  const handleDelete = id => {
-    const index = commentsList.findIndex(value => value.id === id);
-    const deleteCommentList = [
-      ...commentsList.slice(0, index),
-      ...commentsList.slice(index + 1),
-    ];
-    setCommentsList(deleteCommentList);
-  };
-
-  const handleMainLike = () => {
-    if (mainLike === true) {
-      setMainLike(false);
-    } else {
-      setMainLike(true);
-    }
-  };
-
-  const handleLike = id => {
-    const index = commentsList.findIndex(value => value.id === id);
-    const isLikedCommentList = [...commentsList];
-    if (isLikedCommentList[index].isLiked === true) {
-      isLikedCommentList[index].isLiked = false;
-    } else {
-      isLikedCommentList[index].isLiked = true;
-    }
-    setCommentsList(isLikedCommentList);
-  };
+  const [feedList, setFeedList] = useState([1, 2, 3]);
 
   return (
     <div>
       <section className="container-main">
         <section className="main-wrap">
-          <section>
-            {feedList.map((value, e) => (
-              <Feed
-                key={e}
-                mainLike={mainLike}
-                handleMainLike={handleMainLike}
-                commentsList={commentsList}
-                Comment={Comment}
-                handleDelete={handleDelete}
-                handleLike={handleLike}
-                newComment={newComment}
-                handleComment={handleComment}
-                handleCommentEnter={handleCommentEnter}
-                addComment={addComment}
-              />
+          <section className="feed-wrap">
+            {feedList.map(value => (
+              <Feed key={value.id} feedInfo={value} />
             ))}
           </section>
           <aside className="main-right">
