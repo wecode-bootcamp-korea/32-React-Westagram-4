@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AsideJaeWon from './Aside/AsideJaeWon';
+import Comment from './Comment/CommentJaeWon';
 import './MainJaeWon.scss';
 
 function MainJaeWon() {
@@ -12,16 +13,16 @@ function MainJaeWon() {
 
   const onClick = event => {
     event.preventDefault();
-    if (commentInput !== '') {
+    if (commentInput.trim() !== '') {
       let newArr = [...commentList];
-      newArr.push({ account: 'Lily', text: commentInput });
+      newArr.push({ id: Date.now(), account: 'Lily', text: commentInput });
       setCommentList(newArr);
     }
     setCommentInput('');
   };
 
   return (
-    <body className="MainJaeWon">
+    <div className="MainJaeWon">
       <div className="main">
         <div className="main__left">
           <header class="main__left__header">
@@ -71,24 +72,14 @@ function MainJaeWon() {
             </div>
           </article>
           <footer className="main__left__footer">
-            <ul className="footer__comment__results">
-              <li className="footer__comment__result">
+            {/* <li className="footer__comment__result">
                 <span className="comment__account">wecode_official</span>
                 <span className="comment__text">거봐 좋았잖아~~~🌼</span>
                 <button className="comment__heart">
                   <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png" />
                 </button>
-              </li>
-              {commentList.map(e => (
-                <li className="footer__comment__result">
-                  <span className="comment__account">{e.account}</span>
-                  <span className="comment__text">{e.text}</span>
-                  <button className="comment__heart">
-                    <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png" />
-                  </button>
-                </li>
-              ))}
-            </ul>
+              </li> */}
+            <Comment commentList={commentList} key={commentList.id} />
             <span className="footer__time">42분 전</span>
             <form className="footer__comment__ipnut">
               <input
@@ -113,7 +104,7 @@ function MainJaeWon() {
         </div>
         <AsideJaeWon />
       </div>
-    </body>
+    </div>
   );
 }
 

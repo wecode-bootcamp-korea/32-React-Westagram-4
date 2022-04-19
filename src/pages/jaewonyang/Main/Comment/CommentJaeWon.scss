@@ -1,0 +1,28 @@
+.Comment {
+  padding-left: 0;
+
+  li {
+    position: relative;
+    width: 400px;
+    list-style: none;
+
+    span:first-child {
+      font-weight: 600;
+      margin-left: 10px;
+    }
+
+    button {
+      background-color: transparent;
+      outline: none;
+      border: none;
+      position: absolute;
+      right: 30px;
+      cursor: pointer;
+
+      img {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}

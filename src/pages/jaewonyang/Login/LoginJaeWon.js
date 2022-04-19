@@ -5,6 +5,7 @@ import './LoginJaeWon.scss';
 const LoginJaeWon = () => {
   const [idInput, setIdInput] = useState('');
   const [pwInput, setPwInput] = useState('');
+
   const navigate = useNavigate();
   const goToMain = () => {
     navigate('/main-jaewon');
@@ -19,7 +20,7 @@ const LoginJaeWon = () => {
   };
 
   return (
-    <body className="LoginJaeWon">
+    <div className="LoginJaeWon">
       <article className="login">
         <h1 className="logo">Westagram</h1>
         <form className="login__input">
@@ -35,22 +36,21 @@ const LoginJaeWon = () => {
             className="input input__pw"
             onChange={handlePwInput}
           />
+          <button
+            className="login__btn"
+            onClick={goToMain}
+            disabled={
+              idInput.includes('@') && pwInput.length >= 5 ? false : true
+            }
+          >
+            로그인
+          </button>
         </form>
-        <button
-          className={
-            idInput.includes('@') && pwInput.length >= 5
-              ? 'login__btn active'
-              : 'login__btn'
-          }
-          onClick={goToMain}
-        >
-          로그인
-        </button>
         <a href="https://www.naver.com/" className="notice">
           비밀번호를 잊으셨나요?
         </a>
       </article>
-    </body>
+    </div>
   );
 };
 export default LoginJaeWon;

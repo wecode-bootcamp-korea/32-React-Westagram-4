@@ -16,7 +16,7 @@ function AsideJaeWon() {
         </div>
       </div>
       <div className="main__right__articles">
-        <div className="article article__story">
+        <div className="article__story">
           <div className="article__title">
             <span className="story">스토리</span>
             <span className="all">모두 보기</span>
@@ -68,7 +68,7 @@ function AsideJaeWon() {
             </div>
           </div>
         </div>
-        <div className="article article__member ">
+        <div className="article__member ">
           <div className="article__title">
             <span className="story">회원님을 위한 추천</span>
             <span className="all">모두 보기</span>
