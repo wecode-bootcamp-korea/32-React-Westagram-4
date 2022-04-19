@@ -17,14 +17,13 @@ import LoginSungYong from './pages/sungyongseo/Login/LoginSungYong';
 import MainSungYong from './pages/sungyongseo/Main/MainSungYong';
 
 import Nav from './components/Nav/Nav';
-import App from './App';
+import Linker from './pages/Linker/Linker';
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-
+        <Route path="/" element={<Linker />} />
         <Route path="/login-hyeongjun" element={<LoginHyeongJun />} />
         <Route path="/login-sungyong" element={<LoginSungYong />} />
         <Route path="/login-byounggyu" element={<LoginByoungGyu />} />

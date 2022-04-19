@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import './MainByoungGyu.scss';
 import '../../../styles/common.scss';
 import Comment from './CommentByoungGyu';
-
 function Main() {
   const [comment, setComment] = useState([]);
   const [inputValue, setInputValue] = useState('');
