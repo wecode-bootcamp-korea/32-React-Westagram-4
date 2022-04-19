@@ -16,147 +16,12 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-
-  .article {
-    border: 1px solid #dbdbdb;
-    width: 95%;
-    margin-left: 12px;
-    margin-right: 5px;
-    margin-top: 25px;
-    justify-content: center;
-  }
-
-  .feeds {
-    width: 55%;
-    height: 95%;
-  }
 }
+
 .main-right {
   width: 35%;
   height: 75%;
   margin-left: 5px;
-}
-
-.writer-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 15px;
-  background-color: white;
-}
-
-.writer-profile {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.profile-img {
-  width: 35px;
-  margin-right: 12px;
-  border-radius: 50%;
-  border: 1px solid rgb(187, 187, 187);
-}
-
-.writer-id {
-  font-weight: bold;
-}
-
-.moreOpt-icon {
-  width: 15px;
-}
-
-.img-section {
-  width: 100%;
-}
-
-.feedImg {
-  width: 100%;
-}
-
-.icon-section {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 12px;
-}
-
-.icon-section,
-.likeCounting-section,
-.contents-section,
-.comments-section,
-.writing-section {
-  background-color: white;
-}
-
-.icon-section i {
-  font-size: 22px;
-  margin: 0 3px;
-  color: rgb(88, 88, 88);
-}
-
-.likeCounting-section {
-  display: flex;
-  align-items: center;
-  padding: 5px 15px;
-}
-
-.like-profile {
-  margin-right: 5px;
-  width: 20px;
-  border-radius: 50%;
-  border: 1px solid rgb(187, 187, 187);
-}
-
-.likeContent {
-  font-size: 13px;
-}
-
-.likeContent span {
-  font-weight: bold;
-}
-
-.contents-section,
-.comments-section {
-  padding: 0px 15px;
-  font-size: 14px;
-  padding-bottom: 10px;
-}
-
-.comment-box {
-  display: flex;
-  justify-content: space-between;
-}
-
-.userId {
-  font-weight: bold;
-}
-
-.comment-time {
-  color: gray;
-  margin-bottom: 5px;
-}
-
-.writing-section {
-  padding: 10px 15px;
-  display: flex;
-  border-top: 1px solid rgb(199, 199, 199);
-}
-
-.writing-input {
-  border: none;
-  flex: 1;
-}
-
-.writing-input::placeholder {
-  text-align: left;
-}
-
-.writing-btn {
-  border: none;
-  background-color: transparent;
-  color: rgb(76, 144, 223);
-  padding: 0;
-  cursor: pointer;
 }
 
 .main-right {
@@ -188,11 +53,6 @@ body {
   border: 1px solid rgb(199, 199, 199);
   height: 180px;
   overflow: hidden;
-}
-
-.story-list {
-  list-style: none;
-  padding: 5px 15px;
 }
 
 .mainSection-header {

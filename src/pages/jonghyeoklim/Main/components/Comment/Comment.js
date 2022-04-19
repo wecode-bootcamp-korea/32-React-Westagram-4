@@ -9,7 +9,7 @@ function Comment({ commentInfo, handleDelete, handleLike }) {
   //   createdAt: '10분 전',
   // }
 
-  // {
+  // { mock data
   //   "id": 3,
   //   "userName": "jayPark",
   //   "content": "Hey.",

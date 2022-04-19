@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Feed from './components/Feed/Feed';
 import Recommendation from './components/Recommendation/Recommendation';
 import Story from './components/Story/Story';
 import Comment from './components/Comment/Comment';
@@ -40,20 +41,16 @@ function MainJongHyeok() {
   }, []);
 
   const [liveData, setLiveData] = useState(dummyData);
+  const [feedList, setFeedList] = useState([Feed]);
   const [commentsList, setCommentsList] = useState([]);
-  const [newComment, setNewComment] = useState(''); //문자열. 새 댓글 '내용'
+  const [newComment, setNewComment] = useState('');
   const [mainLike, setMainLike] = useState(false);
 
   const handleComment = e => {
-    // console.log(e.target.value);
     setNewComment(e.target.value);
   };
 
   const addComment = () => {
-    //newComment를 commentList배열에다가 담는다~!
-    //기존 자바스크립트 코드에서는 commentsList.push
-    //리액트에서는 기존 상태를 직접 수정하게 되면, 값을 바꿔도 리렌더링이 되지 않으므로--> push 사용 불가!
-    //concat을 사용해야 함(or 구조분해할당(...))
     if (newComment === '') {
       return;
     }
@@ -106,92 +103,26 @@ function MainJongHyeok() {
     setCommentsList(isLikedCommentList);
   };
 
-  // console.log(commentsList);
-
   return (
     <div>
       <section className="container-main">
         <section className="main-wrap">
-          <section className="feeds">
-            <article className="article">
-              <div className="writer-section">
-                <div className="writer-profile">
-                  <img
-                    alt="profile-img"
-                    src="images/jonghyeoklim/lotso.jpeg"
-                    className="profile-img"
-                  />
-                  <span className="writer-id">canon_mj</span>
-                </div>
-                <div>
-                  <img alt="" className="moreOpt-icon" src="icon/more.svg" />
-                </div>
-              </div>
-              <div className="img-section">
-                <img
-                  alt="feedImg"
-                  src="images/jonghyeoklim/feedImg.jpg"
-                  className="feedImg"
-                />
-              </div>
-              <div className="icon-section">
-                <div>
-                  {mainLike ? (
-                    <i
-                      className="fa-solid fa-heart contents-heart isLiked"
-                      onClick={handleMainLike}
-                    />
-                  ) : (
-                    <i
-                      className="fa-regular fa-heart contents-heart"
-                      onClick={handleMainLike}
-                    />
-                  )}
-                  <i className="fa-regular fa-comment" />
-                  <i className="fa-solid fa-arrow-up-from-bracket" />
-                </div>
-                <div>
-                  <i className="fa-regular fa-bookmark" />
-                </div>
-              </div>
-              <div className="likeCounting-section">
-                <img
-                  alt="likeProfileImg"
-                  src="images/jonghyeoklim/lotso.jpeg"
-                  className="like-profile"
-                />
-                <p className="likeContent">
-                  <span>누구누구</span>님 외 <span>10명</span>이 좋아합니다.
-                </p>
-              </div>
-              <div className="contents-section">
-                <div className="comment">
-                  <span className="userId">canon_mj</span>
-                  <span>위워크에서 진행한 베이킹 클래스~</span>
-                </div>
-              </div>
-              {commentsList.map((value, i) => (
-                <Comment
-                  key={i}
-                  commentInfo={value}
-                  handleDelete={handleDelete}
-                  handleLike={handleLike}
-                />
-              ))}
-              <div className="writing-section">
-                <input
-                  className="writing-input"
-                  type="text"
-                  placeholder="댓글 달기..."
-                  value={newComment}
-                  onChange={handleComment}
-                  onKeyUp={e => handleCommentEnter(e)}
-                />
-                <button className="writing-btn" onClick={addComment}>
-                  게시
-                </button>
-              </div>
-            </article>
+          <section>
+            {feedList.map((value, e) => (
+              <Feed
+                key={e}
+                mainLike={mainLike}
+                handleMainLike={handleMainLike}
+                commentsList={commentsList}
+                Comment={Comment}
+                handleDelete={handleDelete}
+                handleLike={handleLike}
+                newComment={newComment}
+                handleComment={handleComment}
+                handleCommentEnter={handleCommentEnter}
+                addComment={addComment}
+              />
+            ))}
           </section>
           <aside className="main-right">
             <div className="wecode-desc">

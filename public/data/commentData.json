@@ -1,20 +1,44 @@
-[
-  {
-    "id": 1,
-    "userName": "wecode",
-    "content": "Welcome to world best coding bootcamp!",
-    "isLiked": true
-  },
-  {
-    "id": 2,
-    "userName": "joonsikyang",
-    "content": "Hi there.",
-    "isLiked": false
-  },
-  {
-    "id": 3,
-    "userName": "jayPark",
-    "content": "Hey.",
-    "isLiked": false
-  }
-]
+{
+  "comment": [
+    {
+      "id": 1,
+      "userName": "wecode",
+      "content": "Welcome to world best coding bootcamp!",
+      "isLiked": true
+    },
+    {
+      "id": 2,
+      "userName": "joonsikyang",
+      "content": "Hi there.",
+      "isLiked": false
+    },
+    {
+      "id": 3,
+      "userName": "jayPark",
+      "content": "Hey.",
+      "isLiked": false
+    }
+  ]
+  // "dummyData": [
+  //   {
+  //     "image": "images/jonghyeoklim/lotso.jpeg",
+  //     "userId": "유림",
+  //     "createdAt": "17분전"
+  //   },
+  //   {
+  //     "image": "images/jonghyeoklim/lotso.jpeg",
+  //     "userId": "_yum_s",
+  //     "createdAt": "100분전"
+  //   },
+  //   {
+  //     "image": "images/jonghyeoklim/lotso.jpeg",
+  //     "userId": "덕순",
+  //     "createdAt": "15분전"
+  //   },
+  //   {
+  //     "image": "images/jonghyeoklim/lotso.jpeg",
+  //     "userId": "덕구",
+  //     "createdAt": "16분전"
+  //   }
+  // ]
+}
