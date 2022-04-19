@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './LoginHyeongJun.scss';
 import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function LoginHyeongJun() {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
   const navigate = useNavigate();
@@ -71,4 +71,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginHyeongJun;
