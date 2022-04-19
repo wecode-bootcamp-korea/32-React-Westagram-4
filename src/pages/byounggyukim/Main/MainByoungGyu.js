@@ -30,10 +30,6 @@ function Main() {
     }
   };
 
-  // const activation = () => {
-  //   inputValue ? setActive(true) : setActive(false);
-  // };
-
   useEffect(() => {
     fetch('http://localhost:3000/data/commentData.json', {
       method: 'GET',
