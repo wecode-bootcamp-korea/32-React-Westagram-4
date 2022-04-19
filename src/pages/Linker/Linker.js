@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './App.scss';
+import './Linker.scss';
 
-function App() {
+function Linker() {
   return (
     <div className="total">
       <div className="intro">Wecode 32기 Front-End Westagram Team 4</div>
@@ -80,4 +80,4 @@ function App() {
   );
 }
 
-export default App;
+export default Linker;
