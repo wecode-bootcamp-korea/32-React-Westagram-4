@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './MainSungYong.scss';
 
 const Main = () => {
+  const [feedList, setFeedList] = useState([]);
   const [commentList, setCommentList] = useState([]);
 
   useEffect(() => {
@@ -287,21 +288,15 @@ function AddComment(props) {
     return (
       <div className="history" key={i}>
         <div className="name-box">
-          <span className="name">{props.commentList[i].userName}</span>
+          <span className="name">
+            {props.commentList[i].comment[i].userName}
+          </span>
         </div>
-
         {props.commentList[i].content.length > 15 ? (
-          <>
-            <span className="content">{props.commentList[i].content}...</span>
-            {/* <span className="content-overflow">
-              {props.commentList[i].overflow}
-            </span> */}
-          </>
+          <span className="content">{props.commentList[i].content}...</span>
         ) : (
           <span className="content">{props.commentList[i].content}</span>
         )}
-
-        {/* <span className="content-time">{props.commentList[i].time}</span> */}
       </div>
     );
   });
