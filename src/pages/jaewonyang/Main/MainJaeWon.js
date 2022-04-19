@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './MainJaeWon.scss';
 import AsideJaeWon from './Aside/AsideJaeWon';
+import './MainJaeWon.scss';
 
 function MainJaeWon() {
   const [commentInput, setCommentInput] = useState('');
@@ -21,9 +21,9 @@ function MainJaeWon() {
   };
 
   return (
-    <body className="body">
-      <div className="Main">
-        <div className="MainJaeWon">
+    <body className="MainJaeWon">
+      <div className="main">
+        <div className="main__left">
           <header class="main__left__header">
             <img
               alt="profile"
@@ -118,8 +118,3 @@ function MainJaeWon() {
 }
 
 export default MainJaeWon;
-
-// 사용자가 댓글 입력 후 enter 를 누르거나 왼쪽의 버튼 클릭 시 댓글이 추가되도록 구현해주세요.
-// 댓글 기능을 구현하기 위해서는 배열 데이터 타입을 활용해야 합니다.
-// Array.map 참고해서 시도해주세요.
-// 위 순서대로 완료 후 Add : Mission 3 - 댓글 기능 구현 commit message를 남긴 후 push 해주세요.

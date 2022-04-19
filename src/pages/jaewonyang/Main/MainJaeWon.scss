@@ -1,15 +1,15 @@
-body {
+.MainJaeWon {
   margin: auto;
   background-color: #fafafa;
   height: 800px;
 
-  .Main {
+  .main {
     display: flex;
     height: 800px;
     margin-top: 50px;
     justify-content: space-evenly;
 
-    .MainJaeWon {
+    .main__left {
       width: 400px;
       height: 650px;
       border: 1px solid lightgray;

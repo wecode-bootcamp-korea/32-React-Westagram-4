@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './LoginJaeWon.scss';
 import { useNavigate } from 'react-router-dom';
+import './LoginJaeWon.scss';
 
 const LoginJaeWon = () => {
   const [idInput, setIdInput] = useState('');
