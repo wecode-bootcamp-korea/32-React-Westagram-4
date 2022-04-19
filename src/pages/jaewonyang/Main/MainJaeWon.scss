@@ -177,7 +177,7 @@ body {
             padding: 4px 0 4px 10px;
           }
 
-          button {
+          .comment__button {
             position: absolute;
             top: 8px;
             right: 8px;
@@ -185,6 +185,10 @@ body {
             border: none;
             outline: none;
             color: #bfe0fd;
+          }
+
+          .active {
+            color: #0095f6;
           }
         }
       }
