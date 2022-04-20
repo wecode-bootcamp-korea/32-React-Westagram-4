@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AsideJaeWon from './Aside/AsideJaeWon';
 import Comment from './Comment/CommentJaeWon';
 import './MainJaeWon.scss';
@@ -6,6 +6,16 @@ import './MainJaeWon.scss';
 function MainJaeWon() {
   const [commentInput, setCommentInput] = useState('');
   const [commentList, setCommentList] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setCommentList(data);
+      });
+  }, []);
 
   const handleCommentInput = event => {
     setCommentInput(event.target.value);
@@ -15,7 +25,7 @@ function MainJaeWon() {
     event.preventDefault();
     if (commentInput.trim() !== '') {
       let newArr = [...commentList];
-      newArr.push({ id: Date.now(), account: 'Lily', text: commentInput });
+      newArr.push({ id: Date.now(), userName: 'Lily', content: commentInput });
       setCommentList(newArr);
     }
     setCommentInput('');
@@ -56,7 +66,7 @@ function MainJaeWon() {
             </div>
             <div className="article__like">
               <img
-                alt="progile image"
+                alt="profile image"
                 src="../images/jaewonyang/profile.jpg"
                 className="like__profile"
               />
@@ -72,13 +82,6 @@ function MainJaeWon() {
             </div>
           </article>
           <footer className="main__left__footer">
-            {/* <li className="footer__comment__result">
-                <span className="comment__account">wecode_official</span>
-                <span className="comment__text">거봐 좋았잖아~~~🌼</span>
-                <button className="comment__heart">
-                  <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png" />
-                </button>
-              </li> */}
             <Comment commentList={commentList} key={commentList.id} />
             <span className="footer__time">42분 전</span>
             <form className="footer__comment__ipnut">

@@ -109,6 +109,7 @@
             font-weight: 600;
             font-size: 16px;
             margin-left: 10px;
+            margin-right: 5px;
           }
 
           span:nth-child(2) {
@@ -122,36 +123,6 @@
       footer {
         width: 400px;
         background-color: white;
-
-        // ul {
-        //   padding-left: 0;
-
-        //   li {
-        //     position: relative;
-        //     width: 400px;
-        //     list-style: none;
-
-        //     span:first-child {
-        //       // color: red;
-        //       font-weight: 600;
-        //       margin-left: 10px;
-        //     }
-
-        //     button {
-        //       background-color: transparent;
-        //       outline: none;
-        //       border: none;
-        //       position: absolute;
-        //       right: 30px;
-        //       cursor: pointer;
-
-        //       img {
-        //         width: 10px;
-        //         height: 10px;
-        //       }
-        //     }
-        //   }
-        // }
 
         .footer__time {
           color: gray;
