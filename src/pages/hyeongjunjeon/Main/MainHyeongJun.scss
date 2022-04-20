@@ -1,24 +1,21 @@
-* {
-  box-sizing: border-box;
-}
 main {
-  width: 100%;
+  width: 90%;
   height: 100%;
   display: flex;
   border: 1px solid white;
 
-  .ManyFeed {
-    width: 70%;
-  }
-
   article {
-    width: 90%;
+    width: 80%;
     border: 1px solid rgb(163, 160, 160);
     margin: 20px auto;
   }
 
+  .feed {
+    width: 80%;
+  }
+
   .feeds {
-    width: 100%;
+    width: 80%;
     border: 1px solid white;
     margin: 5px auto 0px auto;
   }
@@ -128,7 +125,7 @@ main {
   }
 
   .mainRight {
-    width: 35%;
+    width: 30%;
     height: 95%;
     margin: 5px 15px 5px 15px;
     border: 1px solid white;

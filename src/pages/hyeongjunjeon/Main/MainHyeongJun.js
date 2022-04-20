@@ -1,15 +1,13 @@
 import React from 'react';
+import Feed from '../Components/Feed';
 import './MainHyeongJun.scss';
-import ManyFeed from '../Components/ManyFeed';
 
 function MainHyeongJun() {
   return (
     <div>
       <main>
-        <div className="ManyFeed">
-          <ManyFeed />
-          <ManyFeed />
-          <ManyFeed />
+        <div className="feed">
+          <Feed />
         </div>
 
         <div className="mainRight">

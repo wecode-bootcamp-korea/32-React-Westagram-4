@@ -1,0 +1,53 @@
+$instagram-gradient: linear-gradient(
+  to right top,
+  #fcbe66,
+  #f16e36,
+  #bd317f,
+  #9244a0,
+  #9244a0
+);
+
+.total {
+  padding: 10% 0;
+  text-align: center;
+  font-size: large;
+
+  .intro {
+    color: orange;
+    font-size: xx-large;
+  }
+
+  .frontLine {
+    display: flex;
+    justify-content: space-between;
+    margin: 100px 0;
+    padding: 0 200px;
+  }
+
+  .backLine {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding: 0 400px;
+  }
+
+  .nemobox {
+    width: 250px;
+    height: 360px;
+    border: 2px solid transparent;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 0;
+    background: $instagram-gradient;
+    color: whitesmoke;
+    font-weight: bold;
+  }
+
+  .login,
+  .main {
+    color: peachpuff;
+    font-size: xx-large;
+  }
+}

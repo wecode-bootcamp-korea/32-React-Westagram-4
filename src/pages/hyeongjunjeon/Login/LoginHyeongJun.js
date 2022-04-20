@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-
-import './LoginHyeongJun.scss';
 import { useNavigate } from 'react-router-dom';
+import './LoginHyeongJun.scss';
 
 function LoginHyeongJun() {
   const [id, setId] = useState('');
@@ -9,12 +8,9 @@ function LoginHyeongJun() {
   const navigate = useNavigate();
   const handleIdInput = e => {
     setId(e.target.value);
-    console.log('id:', e.target.value);
   };
-
   const handlePwInput = e => {
     setPw(e.target.value);
-    console.log('pw:', e.target.value);
   };
 
   const goToMain = () => {
