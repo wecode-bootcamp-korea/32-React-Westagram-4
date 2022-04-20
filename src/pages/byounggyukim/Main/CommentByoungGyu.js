@@ -1,7 +1,8 @@
 function Comment(comment) {
   return (
     <div>
-      <span className="userid">{comment.name}</span> &nbsp; {comment.comment}
+      <span className="userid">{comment.name}</span> &nbsp;
+      {comment.comment}
     </div>
   );
 }

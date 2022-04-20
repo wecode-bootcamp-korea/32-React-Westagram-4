@@ -1,32 +1,46 @@
 import React, { useState } from 'react';
-// import '../../Styles/reset.scss';
 import './LoginByoungGyu.scss';
-// import '../../Styles/common.scss';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const navigate = useNavigate();
-  const goToMain = () => {
-    navigate('/main-byounggyu');
-  };
-
   const [loginId, setLoginId] = useState('');
   const [loginPw, setLoginPw] = useState('');
   const [loginBtn, setLoginBtn] = useState(true);
 
-  function idInput(event) {
+  const goToMain = e => {
+    // e.preventDefault();
+    // fetch('http://10.58.2.16:8000/users/signin', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     email: loginId,
+    //     password: loginPw,
+    //   }),
+    // })
+    //   .then(response => response.json())
+    //   .then(result => {
+    //     if (result.message === 'SUCCESS') {
+    //       alert('환영합니다!');
+    navigate('/main-byounggyu');
+    // } else {
+    //   alert('저리가');
+    // }
+    // });
+  };
+
+  const idInput = event => {
     setLoginId(event.target.value);
-  }
+  };
 
-  function pwInput(event) {
+  const pwInput = event => {
     setLoginPw(event.target.value);
-  }
+  };
 
-  const activation = () => {
-    return loginId.includes('@') && loginPw.length > 5
+  function activation() {
+    return (loginId.length && loginPw.length) > 5
       ? setLoginBtn(false)
       : setLoginBtn(true);
-  };
+  }
 
   return (
     <div className="login">
