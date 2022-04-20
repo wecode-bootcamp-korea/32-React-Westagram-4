@@ -1,0 +1,66 @@
+.Login {
+  width: 360px;
+  height: 380px;
+  margin: auto;
+  border: 1px solid black;
+  text-align: center;
+
+  header {
+    margin-top: 30px;
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .container {
+    width: 348px;
+    height: 360px;
+    margin: 8px auto;
+    border: 1px solid black;
+  }
+
+  article {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .idBox,
+  .pwBox {
+    width: 250px;
+    height: 30px;
+    background-color: whitesmoke;
+    border: 1px solid gainsboro;
+    text-align: left;
+  }
+
+  .password {
+    margin-top: 10px;
+  }
+
+  .loginButton {
+    margin-top: 20px;
+  }
+
+  .button {
+    width: 250px;
+    height: 30px;
+    border: 1px solid white;
+    background-color: #b2e1fc;
+    color: white;
+    text-align: center;
+  }
+
+  .forgetPw {
+    margin-top: 90px;
+    color: rgba(var(--fe0, 0, 55, 107), 1);
+  }
+
+  .unActiveBt {
+    background-color: #b2dffc;
+    color: #fff;
+  }
+
+  .activeBt {
+    background-color: #0095f6;
+  }
+}
