@@ -1,7 +1,19 @@
-import React from "react";
+import React from 'react';
+import AsideJaeWon from './Aside/AsideJaeWon';
+import FeedJaeWon from './Feed/FeedJaeWon';
+import './MainJaeWon.scss';
 
-function Main() {
-  return <div>Main</div>;
+function MainJaeWon() {
+  return (
+    <div className="MainJaeWon">
+      <div className="main">
+        <div className="feed">
+          <FeedJaeWon />
+        </div>
+        <AsideJaeWon />
+      </div>
+    </div>
+  );
 }
 
-export default Main;
+export default MainJaeWon;

@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "userName": "happy__lily",
+    "img": "../images/jaewonyang/main.jpeg",
+    "content": "행복한 릴리",
+    "isLiked": true,
+    "comment": [
+      {
+        "userName": "totoro",
+        "content": "안뇽~~",
+        "isLiked": true,
+        "isDeleted": true
+      },
+      {
+        "userName": "starbucks",
+        "content": "맞팔해요~",
+        "isLiked": true,
+        "isDeleted": true
+      },
+      {
+        "userName": "ourcode",
+        "content": "멋있다",
+        "isLiked": true,
+        "isDeleted": true
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userName": "smile__lily",
+    "img": "../images/jaewonyang/profile.jpg",
+    "content": "스마일 릴리",
+    "isLiked": true,
+    "comment": [
+      {
+        "userName": "댓글 작성자1",
+        "content": "댓글 내용1",
+        "isLiked": true,
+        "isDeleted": true
+      },
+      {
+        "userName": "댓글 작성자2",
+        "content": "댓글 내용2",
+        "isLiked": true,
+        "isDeleted": true
+      },
+      {
+        "userName": "댓글 작성자3",
+        "content": "댓글 내용3",
+        "isLiked": true,
+        "isDeleted": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userName": "i_am_lily",
+    "img": "../images/jaewonyang/main.jpeg",
+    "content": "나는 릴리",
+    "isLiked": true,
+    "comment": [
+      {
+        "userName": "댓글 작성자1",
+        "content": "댓글 내용1",
+        "isLiked": true,
+        "isDeleted": true
+      },
+      {
+        "userName": "댓글 작성자2",
+        "content": "댓글 내용2",
+        "isLiked": true,
+        "isDeleted": true
+      },
+      {
+        "userName": "댓글 작성자3",
+        "content": "댓글 내용3",
+        "isLiked": true,
+        "isDeleted": true
+      }
+    ]
+  }
+]

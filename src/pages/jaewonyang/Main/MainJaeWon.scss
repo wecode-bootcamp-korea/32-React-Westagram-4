@@ -1,0 +1,19 @@
+.MainJaeWon {
+  margin: auto;
+  background-color: #fafafa;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+
+  .main {
+    display: flex;
+    height: 800px;
+    margin-top: 50px;
+    justify-content: space-evenly;
+
+    .feed {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

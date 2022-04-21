@@ -1,0 +1,41 @@
+.CommentsJaeWon {
+  width: 400px;
+  background-color: white;
+
+  .footer__time {
+    color: gray;
+    margin-left: 10px;
+  }
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    input {
+      outline: none;
+      border: none;
+      width: 100%;
+      height: 25px;
+      position: relative;
+      left: 0;
+      padding: 4px 0 4px 10px;
+    }
+
+    .comment__button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      color: #bfe0fd;
+    }
+
+    .active {
+      color: #0095f6;
+    }
+  }
+}
