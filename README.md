@@ -13,3 +13,8 @@ Westagram 팀 프로젝트
 Icon 출처
 
 FontAwesome : https://fontawesome.com/
+
+-- 목표
+좋아요 기능
+댓글 - 더보기 기능
+댓글 - 5개 넘어가면 바꾸는 기능
