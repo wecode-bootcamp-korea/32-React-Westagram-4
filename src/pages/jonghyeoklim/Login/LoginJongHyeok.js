@@ -1,14 +1,14 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './LoginJongHyeok.scss';
+import './LoginJongHyeok.scss';
 
 function Login() {
   const navigate = useNavigate();
 
-  const goToMain = () => {
-    navigate('/main-jonghyeok');
-  };
+  // const goToMain = () => {
+  //   navigate('/main-jonghyeok');
+  // };
 
   const [Id, setId] = useState('');
 
@@ -20,6 +20,32 @@ function Login() {
   const handlePwInput = event => {
     setPassWord(event.target.value);
   };
+  const goToMain = () => {
+    fetch('http://10.58.4.56:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: Id,
+        password: PassWord,
+      }),
+    })
+      .then(res => res.json())
+      .then(result => {
+        console.log('결과', result);
+        navigate('/main-jonghyeok');
+      });
+  };
+
+  // function signUp() {
+  //   fetch('http://10.58.4.56:8000/users/signup', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       email: Id,
+  //       password: PassWord,
+  //     }),
+  //   })
+  //     .then(res => res.json())
+  //     .then(result => console.log('결과', result));
+  // }
 
   return (
     <div className="container">
