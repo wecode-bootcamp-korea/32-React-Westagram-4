@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+.container-main {
+  width: 800px;
+  margin: 25px auto;
+  background-color: #fafafa;
+}
+.main-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.feed-wrap {
+  width: 70%;
+}
+
+.main-right {
+  width: 30%;
+  margin-top: 25px;
+}
+
+.wecode-desc {
+  display: flex;
+  align-items: center;
+}
+.wecode-logo {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.wecode-profile {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.wecode-sub-profile {
+  color: gray;
+  font-weight: normal;
+}
+
+.story-section {
+  background-color: white;
+  margin-top: 12px;
+  border: 1px solid rgb(199, 199, 199);
+  height: 180px;
+  overflow: hidden;
+}
+
+.mainSection-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  font-size: 15px;
+}
+
+.recomm-section {
+  background-color: white;
+  margin-top: 12px;
+  border: 1px solid rgb(199, 199, 199);
+}
+
+.deletebtn {
+  display: flex;
+  align-items: center;
+}
+
+.commentDelete {
+  border: 1px solid #dbdbdb;
+  background-color: #fafafa;
+  margin-right: 8px;
+}
+
+.westagram-font {
+  font-family: 'Gamja Flower', cursive;
+  font-size: 18px;
+  margin-left: 12px;
+  padding-left: 12px;
+  border-left: thin solid black;
+  cursor: pointer;
+}
+
+input:focus {
+  outline: 1px solid #dbdbdb;
+
+  input::placeholder {
+    color: #b6b6b6;
+    text-align: center;
+  }
+}
+
+.westa-footer {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}

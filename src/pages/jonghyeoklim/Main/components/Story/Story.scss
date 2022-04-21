@@ -1,0 +1,20 @@
+.story {
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+  font-size: 14px;
+}
+
+.story-profile {
+  width: 30px;
+  border-radius: 50%;
+  // border: 2px solid;
+  padding: 1px;
+  margin-right: 8px;
+  height: 100%;
+}
+
+.story-list {
+  list-style: none;
+  padding: 5px 15px;
+}
