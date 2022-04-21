@@ -3,27 +3,27 @@
   padding: 0px 15px;
   font-size: 14px;
   padding-bottom: 10px;
-}
 
-.comment-box {
-  display: flex;
-  justify-content: space-between;
-}
+  .comment-box {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.comment-time {
-  color: gray;
-  margin-bottom: 5px;
-}
+  .comment-time {
+    color: gray;
+    margin-bottom: 5px;
+  }
 
-.fa-trash-can {
-  cursor: pointer;
-  margin-right: 15px;
-}
+  .fa-trash-can {
+    cursor: pointer;
+    margin-right: 15px;
+  }
 
-.isLiked {
-  color: red;
-}
+  .isLiked {
+    color: red;
+  }
 
-.fa-heart {
-  transition: 0.5s;
+  .fa-heart {
+    transition: 0.5s;
+  }
 }
