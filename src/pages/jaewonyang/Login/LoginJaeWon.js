@@ -7,8 +7,25 @@ const LoginJaeWon = () => {
   const [pwInput, setPwInput] = useState('');
 
   const navigate = useNavigate();
-  const goToMain = () => {
-    navigate('/main-jaewon');
+  const goToMain = event => {
+    event.preventDefault();
+    fetch('http://10.58.5.27:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: idInput,
+        password: pwInput,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.message === 'INVALID_PASSWORD') {
+          alert('비밀번호가 틀렸습니다.');
+        } else if (result.message === 'SUCCESS') {
+          localStorage.setItem('token', result.access_token);
+          alert('환영합니다');
+          navigate('/main-jaewon');
+        }
+      });
   };
 
   const handleIdInput = event => {
