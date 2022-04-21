@@ -4,7 +4,7 @@ import './CommentJaeWon.scss';
 function CommentJaeWon({ commentList, key }) {
   return (
     <>
-      <ul className="Comment">
+      <ul className="CommentJaeWon">
         {commentList.map(e => (
           <li className="footer__comment" key={key}>
             <span className="comment__account">{e.userName}</span>
