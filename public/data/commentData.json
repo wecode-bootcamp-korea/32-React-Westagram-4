@@ -6,18 +6,21 @@
     "mention": "피드 내용1",
     "comment": [
       {
+        "id": 1,
         "userName": "1댓글 작성자1",
         "content": "1댓글 내용1",
         "time": true,
         "overflow": true
       },
       {
+        "id": 2,
         "userName": "1댓글 작성자2",
         "content": "1댓글 내용2",
         "overflow": true,
         "writeTime": true
       },
       {
+        "id": 3,
         "userName": "1댓글 작성자3",
         "content": "1댓글 내용3",
         "overflow": true,
@@ -33,18 +36,21 @@
     "mention": "피드 내용2",
     "comment": [
       {
+        "id": 1,
         "userName": "2댓글 작성자1",
         "content": "2댓글 내용1",
         "time": true,
         "overflow": true
       },
       {
+        "id": 2,
         "userName": "2댓글 작성자2",
         "content": "2댓글 내용2",
         "overflow": true,
         "writeTime": true
       },
       {
+        "id": 3,
         "userName": "2댓글 작성자3",
         "content": "2댓글 내용3",
         "overflow": true,
@@ -59,18 +65,21 @@
     "mention": "피드 내용3",
     "comment": [
       {
+        "id": 1,
         "userName": "3댓글 작성자1",
         "content": "3댓글 내용1",
         "time": true,
         "overflow": true
       },
       {
+        "id": 2,
         "userName": "3댓글 작성자2",
         "content": "3댓글 내용2",
         "overflow": true,
         "writeTime": true
       },
       {
+        "id": 3,
         "userName": "3댓글 작성자3",
         "content": "3댓글 내용3",
         "overflow": true,

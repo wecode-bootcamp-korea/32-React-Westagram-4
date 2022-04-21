@@ -1,79 +1,68 @@
 import React, { useState } from 'react';
-import '../MainSungYong.js';
+import Comment from './CommentSungYong.js';
 
-// const feedList = commentList.comment.map(feedList => {
-//   return feedList;
-// });
 const Feed = props => {
-  return props.commentList.map((commentList, i) => {
-    return <FeedSon commentList={commentList} key={i} />;
-  });
-};
-
-const FeedSon = props => {
   const [commentInput, setCommentInput] = useState('');
   const [commentBtn, setCommentBtn] = useState(true);
   const [boolean, setBoolean] = useState(false);
-  const { commentList } = props;
+
+  const [test, setTest] = useState([]);
 
   const changeInput = e => {
     setCommentInput(e.target.value);
+    setCommentBtn(
+      e.target.value === '' || e.target.value === null ? true : false
+    );
   };
+
+  const sendComment = e => {
+    let copy = [...props.commentList.comment];
+    copy.push({
+      id: 4,
+      userName: 'wecode',
+      content: commentInput,
+      time: '방금 전',
+      overflow: '더 보기',
+    });
+    setTest(copy);
+    console.log(test);
+    setCommentBtn(true);
+    setCommentInput('');
+  };
+
   const changeBtn = e => {
-    setCommentBtn(commentInput === '' || commentInput === null ? true : false);
-    if (e.key === 'Enter') {
-      console.log(...commentList);
-      let copy = [...commentList];
-      copy.push({
-        id: 4,
-        userName: 'wecode',
-        content: commentInput,
-        mention: 'zz',
-        comment: [
-          {
-            userName: '1댓글 작성자1',
-            content: '1댓글 내용1',
-            time: true,
-            overflow: true,
-          },
-          {
-            userName: '1댓글 작성자1',
-            content: '1댓글 내용1',
-            time: true,
-            overflow: true,
-          },
-          {
-            userName: '1댓글 작성자1',
-            content: '1댓글 내용1',
-            time: true,
-            overflow: true,
-          },
-        ],
-      });
-      props.setCommentList(copy);
-
-      // setCommentBtn(true);
-      // setCommentInput(null);
-    }
-  };
-
-  const sendComment = () => {
-    return commentBtn === false
-      ? e => {
-          if (commentInput !== '' && e.key === 'Enter') {
-            let copy = [...commentList];
-            copy.push({
-              userName: 'wecode',
-              content: commentInput,
-              // time: '방금 전',
-              // overflow: '더 보기',
-            });
-            props.setCommentList(copy);
-            setCommentBtn(true);
-            setCommentInput('');
-          }
-        }
-      : null;
+    // if (e.key === 'Enter') {
+    //   props.setCommentList(
+    //   ...props.userName
+    //   {
+    //     id: 4,
+    //     userName: 'wecode',
+    //     content: commentInput,
+    //     mention: 'zz',
+    //     comment: [
+    //       {
+    //         userName: '1댓글 작성자1',
+    //         content: '1댓글 내용1',
+    //         time: true,
+    //         overflow: true,
+    //       },
+    //       {
+    //         userName: '1댓글 작성자1',
+    //         content: '1댓글 내용1',
+    //         time: true,
+    //         overflow: true,
+    //       },
+    //       {
+    //         userName: '1댓글 작성자1',
+    //         content: '1댓글 내용1',
+    //         time: true,
+    //         overflow: true,
+    //       },
+    //     ],
+    //   });
+    //   setCommentBtn(true);
+    //   setCommentInput(null);
+    //   )}
   };
 
   return (
@@ -87,7 +76,8 @@ const FeedSon = props => {
               className="img"
             />
           </div>
-          <span className="name">{commentList.userName}</span>
+
+          <span className="name">{props.commentList.userName}</span>
         </div>
         <span className="section-menu">···</span>
       </div>
@@ -126,16 +116,13 @@ const FeedSon = props => {
                 src="https://cdn.pixabay.com/photo/2022/04/01/22/55/submarine-7105870__340.png"
               />
             </div>
-            <span className="name">aineworld</span>
+
+            <span className="name">gg</span>
             <span className="like">님 외 10명이 좋아합니다.</span>
           </div>
-          <div className="history">
-            <div className="name-box">
-              <span className="name">{commentList.id}</span>
-            </div>
-            <span className="content">{commentList.content}...</span>
-          </div>
+          <Comment feedList={props.commentList.comment} test={test} />
         </div>
+
         <div className="comment-footer">
           <input
             className="comment"

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Feed from './components/FeedSungyong.js';
+import Feed from './components/FeedSungYong.js';
 import './MainSungYong.scss';
 
 const Main = () => {
@@ -17,8 +17,9 @@ const Main = () => {
 
   return (
     <div className="main-container">
-      <Feed commentList={commentList} />
-
+      {commentList.map((commentList, i) => {
+        return <Feed commentList={commentList} i={i} key={i} />;
+      })}
       <aside className="aside-container">
         <div className="test">
           <div className="aside-header">
