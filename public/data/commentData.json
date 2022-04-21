@@ -1,28 +1,25 @@
 [
   {
     "id": 1,
-    "userName": "피드 작성자",
-    "content": "이미지 URL",
-    "mention": "피드 내용",
+    "userName": "피드 작성자1",
+    "content": "이미지 URL1",
+    "mention": "피드 내용1",
     "comment": [
       {
-        "id": 1,
-        "userName": "댓글 작성자1",
-        "content": "댓글 내용1",
+        "userName": "1댓글 작성자1",
+        "content": "1댓글 내용1",
         "time": true,
         "overflow": true
       },
       {
-        "id": 2,
-        "userName": "댓글 작성자2",
-        "content": "댓글 내용2",
+        "userName": "1댓글 작성자2",
+        "content": "1댓글 내용2",
         "overflow": true,
         "writeTime": true
       },
       {
-        "id": 3,
-        "userName": "댓글 작성자3",
-        "content": "댓글 내용3",
+        "userName": "1댓글 작성자3",
+        "content": "1댓글 내용3",
         "overflow": true,
         "writeTime": true
       }
@@ -31,14 +28,54 @@
 
   {
     "id": 2,
-    "userName": "joonsikyang",
-    "content": "Hi there.",
-    "isLiked": false
+    "userName": "피드 작성자2",
+    "content": "이미지 URL2",
+    "mention": "피드 내용2",
+    "comment": [
+      {
+        "userName": "2댓글 작성자1",
+        "content": "2댓글 내용1",
+        "time": true,
+        "overflow": true
+      },
+      {
+        "userName": "2댓글 작성자2",
+        "content": "2댓글 내용2",
+        "overflow": true,
+        "writeTime": true
+      },
+      {
+        "userName": "2댓글 작성자3",
+        "content": "2댓글 내용3",
+        "overflow": true,
+        "writeTime": true
+      }
+    ]
   },
   {
     "id": 3,
-    "userName": "jayPark",
-    "content": "Hey.",
-    "isLiked": false
+    "userName": "피드 작성자3",
+    "content": "이미지 URL3",
+    "mention": "피드 내용3",
+    "comment": [
+      {
+        "userName": "3댓글 작성자1",
+        "content": "3댓글 내용1",
+        "time": true,
+        "overflow": true
+      },
+      {
+        "userName": "3댓글 작성자2",
+        "content": "3댓글 내용2",
+        "overflow": true,
+        "writeTime": true
+      },
+      {
+        "userName": "3댓글 작성자3",
+        "content": "3댓글 내용3",
+        "overflow": true,
+        "writeTime": true
+      }
+    ]
   }
 ]
